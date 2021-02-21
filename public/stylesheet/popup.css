@@ -1,5 +1,5 @@
 body{
-    background-color: #fcfcfc;
+    background-color: #fff;
     width: 350px; 
     height: 450px; 
     border-radius: 4px;
@@ -7,50 +7,76 @@ body{
 
 .header{
     text-align: center; 
-    padding-top: 15px; 
+    padding-top: 10px; 
+    padding-bottom: 5px;
     color: #4f4a41;
 }
 
 .border{
     width: 350px; 
     height: 1px; 
+    margin-right: 5px;
     background-color: #2c3531;
 }
 
 .controls{
-    height: 20px; 
-    padding-top: 10px;
     display: flex;
+    flex: auto;
     color: #8e8d8a;
     font-size: 14px;
+    float: left;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .radioChoice{
+    padding: 5px;
+}
+
+.fieldParams{
+    padding-bottom: 5px; 
+    font-size: 14px; 
+    padding-left: 10px;
+    color: #8e8d8a; 
+    padding-top: 15px;
+}
+
+.fieldTag{
+    padding-right: 5px; 
+    float: left; 
+    padding-bottom: 10px; 
+    padding-top: 10px;
+    color: #8e8d8a;
+}
+
+.break{
+    width: 350px;
+    padding-bottom: 10px;
+}
+
+.wishBoardSec{
+    padding-bottom: 10px; 
+    font-size: 14px; 
+    padding-left: 10px;
+    color: #8e8d8a; 
+}
+
+.titleField{
+    padding-right: 5px; 
+    color: #8e8d8a;
     flex: auto;
-    display: flex;
+    padding-top: 20px;
+}
+
+.align{
+    flex: auto;
     flex-direction: row;
     align-items: flex-start;
 }
 
-.fieldParams{
-    width: 350px; 
-    height: 20px; 
-    padding-bottom: 10px; 
-    font-size: 14px; 
-    color: #8e8d8a; 
-    padding-top: 5px;
-}
-
-.fieldTag{
-    padding-left: 5px; 
-    padding-right: 5px; 
-    float: left; 
-    padding-top: 10px;
-    color: #8e8d8a;
-}
-
 .dropDownList{
-    color: #8e8d8a;
+    color: #8e8d8a; 
 }
 
 .productSection{

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
+import { Link } from 'react-router-dom'
 
 export default function Signup(){
 
@@ -10,6 +11,7 @@ export default function Signup(){
     const { signup } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    //32:17
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -54,7 +56,7 @@ export default function Signup(){
                 </Card.Body>
             </Card>
             <div className = "w-100 text-center mt-2">
-                Already have an account? Log in
+                Already have an account? <Link to="/login">Log In</Link>
             </div>
         </>
     )

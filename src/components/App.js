@@ -4,6 +4,7 @@ import Signup from "./Signup"
 import Profile from "./Profile"
 import Login from "./Login"
 import Dashboard from "./Dashboard"
+import PrivateRoute from "./PrivateRoute"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
@@ -14,9 +15,13 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route exact path="/profile" component={Profile} />
+              <PrivateRoute exact path="/profile" component={Profile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              {/* 
+                Change the route of this to PrivateRoute to ensure that the user 
+                can't access app without a valid account 
+              */}
               <Route path="/" component={Dashboard} />
             </Switch>
           </AuthProvider>

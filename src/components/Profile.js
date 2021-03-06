@@ -10,7 +10,6 @@ export default function Profile() {
 
     async function handleLogout() {
         setError('')
-        //43:33
 
         try{
             await logout()

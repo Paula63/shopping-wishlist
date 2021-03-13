@@ -12,8 +12,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
   return (
-    <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-      <div className="w-100" style={{maxWidth: '400px'}}>
+    <Container >
+      <div>
         <Router>
           <AuthProvider>
             <Switch>
@@ -26,7 +26,7 @@ function App() {
                 Change the route of this to PrivateRoute to ensure that the user 
                 can't access app without a valid account 
               */}
-              <Route path="/" component={Dashboard} />
+              <Route exact path="/" component={Dashboard} />
             </Switch>
           </AuthProvider>
         </Router>

@@ -1,24 +1,16 @@
-import React, { useState } from 'react'
-import { Card, Button, Alert } from 'react-bootstrap'
+import React from 'react'
+import { Container } from 'react-bootstrap'
+
 
 export default function Dashboard() {
-    const [error, setError] = useState('')
-
-    function handleLogout() {
-
-    }
 
     return (
-        <>
-            <Card>
-                <Card.Body>
-                <h2 className = "text-center mb-4">Shopping Wishlist</h2>
-                {error && <Alert variant="danger">{error}</Alert>}
-                </Card.Body>
-            </Card>
-            <div className = "w-100 text-center mt-2">
-                <Button variant="link" onClick={handleLogout}>Log Out</Button>
+        <Container className="w-auto p-3">
+            <div className="flex inline-flex border-bottom border-dark mt-4 mb-8 -mr-">
+                <h1 className="text-center">Shopping Wishlist</h1>
             </div>
-        </>
+            <div></div>
+
+        </Container>
     )
 }

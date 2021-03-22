@@ -1,5 +1,4 @@
 import React from "react"
-import { Container } from "react-bootstrap"
 import Signup from "./Signup"
 import Profile from "./Profile"
 import Login from "./Login"
@@ -12,8 +11,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
   return (
-    <Container >
-      <div>
         <Router>
           <AuthProvider>
             <Switch>
@@ -30,8 +27,6 @@ function App() {
             </Switch>
           </AuthProvider>
         </Router>
-      </div>
-    </Container>
   )
 }
 

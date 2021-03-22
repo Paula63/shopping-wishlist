@@ -1,17 +1,16 @@
 import React from 'react'
-import { Container  } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 
 export default function Dashboard() {
 
     return (
-        <>
-            <Container className="w-100">
-                Shopping
-            </Container>
-            <div>
-                <h2>Shopping Wishlist</h2>
+        <Container className="w-auto p-3">
+            <div className="flex inline-flex border-bottom border-dark mt-4 mb-8 -mr-">
+                <h1 className="text-center">Shopping Wishlist</h1>
             </div>
-        </>
+            <div></div>
+
+        </Container>
     )
 }

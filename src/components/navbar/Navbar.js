@@ -12,13 +12,13 @@ import {
     NavBtnLink 
 } from './NavbarSections';
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
     return (
         <>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to="/">Shopping</NavLogo>
-                    <MobileIcon>
+                    <NavLogo to="/main">Shopping</NavLogo>
+                    <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>
                     <NavMenu>

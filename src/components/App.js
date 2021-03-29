@@ -6,7 +6,7 @@ import Dashboard from "./Dashboard"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
-import Navbar from "./navbar/Navbar";
+import Landing from "./Landing";
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
@@ -25,7 +25,7 @@ function App() {
                 can't access app without a valid account 
               */}
               <Route exact path="/" component={Dashboard} />
-              <Route path="/main" component={Navbar} />
+              <Route path="/main" component={Landing} />
             </Switch>
           </AuthProvider>
         </Router>

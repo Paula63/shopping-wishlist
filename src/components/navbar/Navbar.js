@@ -13,7 +13,6 @@ import {
 } from './NavbarSections';
 
 const Navbar = () => {
-    //46:45
     return (
         <>
             <Nav>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './navbar/Navbar'
-import { Container } from 'react-bootstrap'
 
 
 export default function Dashboard() {

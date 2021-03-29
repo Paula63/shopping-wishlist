@@ -25,7 +25,7 @@ function App() {
                 can't access app without a valid account 
               */}
               <Route exact path="/" component={Dashboard} />
-              <Route path="/unsubscribed" component={Navbar} />
+              <Route path="/main" component={Navbar} />
             </Switch>
           </AuthProvider>
         </Router>

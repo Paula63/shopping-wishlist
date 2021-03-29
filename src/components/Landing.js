@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from './sidebar/Sidebar';
 import Navbar from './navbar/Navbar';
+import Hero from './hero-section/Hero';
 
 export default function Landing() {
 
@@ -14,6 +15,7 @@ export default function Landing() {
         <>
             <Sidebar isOpen={isOpen} toggle={toggle} />
             <Navbar toggle={toggle} />
+            <Hero />
         </>
     )
 }

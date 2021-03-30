@@ -13,7 +13,6 @@ import {
 } from './NavbarSections';
 
 const Navbar = ({ toggle }) => {
-    // 1:43:00
     return (
         <>
             <Nav>
@@ -27,10 +26,10 @@ const Navbar = ({ toggle }) => {
                             <NavLinks to="about">About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="services">Services</NavLinks>
+                            <NavLinks to="discover">Discover</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="discover">Discover</NavLinks>
+                            <NavLinks to="services">Services</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to="signup">Sign Up</NavLinks>

@@ -13,11 +13,12 @@ import {
 } from './NavbarSections';
 
 const Navbar = ({ toggle }) => {
+    // 1:43:00
     return (
         <>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to="/main">Shopping</NavLogo>
+                    <NavLogo to="/main">Shopping Wishlist</NavLogo>
                     <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>

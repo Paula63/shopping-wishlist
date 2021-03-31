@@ -4,6 +4,7 @@ import Navbar from './navbar/Navbar';
 import Hero from './hero-section/Hero';
 import Info from './info-section/Info';
 import { homeObjOne, homeObjTwo , homeObjThree} from './info-section/Data';
+import Services from './services/Services';
 
 export default function Landing() {
 
@@ -20,6 +21,7 @@ export default function Landing() {
             <Hero />
             <Info {...homeObjOne} />
             <Info {...homeObjTwo} />
+            <Services />
             <Info {...homeObjThree} />
         </>
     )

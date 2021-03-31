@@ -32,7 +32,6 @@ export default function Info({
     dark2,
     lightTextDesc
 }) {
-    // 2:33:10
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>

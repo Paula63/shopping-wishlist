@@ -5,6 +5,7 @@ import Hero from './hero-section/Hero';
 import Info from './info-section/Info';
 import { homeObjOne, homeObjTwo , homeObjThree} from './info-section/Data';
 import Services from './services/Services';
+import Footer from './footer/Footer';
 
 export default function Landing() {
 
@@ -23,6 +24,7 @@ export default function Landing() {
             <Info {...homeObjTwo} />
             <Services />
             <Info {...homeObjThree} />
+            <Footer />
         </>
     )
 }

@@ -1,14 +1,16 @@
-import React from "react"
-import Signup from "./Signup"
-import Profile from "./Profile"
-import Login from "./Login"
-import Dashboard from "./Dashboard"
-import PrivateRoute from "./PrivateRoute"
-import ForgotPassword from "./ForgotPassword"
-import UpdateProfile from "./UpdateProfile"
+import React from "react";
+import Signup from "./Signup";
+import Profile from "./Profile";
+import Login from "./Login";
+import Dashboard from "./Dashboard";
+import PrivateRoute from "./PrivateRoute";
+import ForgotPassword from "./ForgotPassword";
+import UpdateProfile from "./UpdateProfile";
 import Landing from "./Landing";
-import { AuthProvider } from "../contexts/AuthContext"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Setting from "./Setting";
+import { Boards, Gardening, Home, Clothing } from "./Boards";
+import { AuthProvider } from "../contexts/AuthContext";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -26,6 +28,11 @@ function App() {
               */}
               <Route exact path="/" component={Dashboard} />
               <Route path="/main" component={Landing} />
+              <PrivateRoute exact path="/settings" component={Setting} />
+              <PrivateRoute exact path="/boards" component={Boards} />
+              <PrivateRoute exact path="/boards/gardening" component={Gardening} />
+              <PrivateRoute exact path="/boards/home" component={Home} />
+              <PrivateRoute exact path="/boards/clothing" component={Clothing} />
             </Switch>
           </AuthProvider>
         </Router>

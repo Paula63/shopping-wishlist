@@ -21,7 +21,7 @@ export const homeObjTwo = {
     lightText: false,
     lightTextDesc: true,
     topLine: 'Big saving',
-    headline: 'Track Product Discounds',
+    headline: 'Track Product Discounts',
     description: 'Get notified through email when saved items get reduced and save on future purchases',
     buttonLabel: 'Learn More',
     imgStart: true,

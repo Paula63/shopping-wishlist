@@ -4,7 +4,7 @@ import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
     {
-        title: 'Account',
+        title: 'Profile',
         path: '/profile',
         icon: <MdIcons.MdAccountCircle />
     },

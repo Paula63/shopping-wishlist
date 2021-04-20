@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Card, Alert, Container } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Card, Container } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import AppBar from './app-bar/AppBar';
 import UserSidebar from './user-sidebar/UserSidebar';
@@ -8,10 +7,7 @@ import { PageContainer, PageName, PageWrap, ButtonWrapper, ButtonLinkSec } from 
 
 export default function Profile() {
 
-    const [error, setError] = useState('')
-    const { currentUser, logout } = useAuth()
-    const history = useHistory()
-
+    const { currentUser } = useAuth()
 
     return (
         <>
@@ -23,8 +19,7 @@ export default function Profile() {
                         Profile
                     </PageName>
                     <ButtonWrapper>
-                        {error && <Alert variant="danger">{error}</Alert>}
-                        <ButtonLinkSec>Update Profile</ButtonLinkSec>
+                        <ButtonLinkSec to="/update-profile">Update Profile</ButtonLinkSec>
                     </ButtonWrapper>
                 </PageWrap>
             </PageContainer>

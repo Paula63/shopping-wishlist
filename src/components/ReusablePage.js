@@ -38,7 +38,7 @@ export const ButtonLinkSec = styled(Link)`
     background: #bf4b49;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #fff;
     font-size: 16px;
     outline: none;
     border: none;
@@ -49,11 +49,10 @@ export const ButtonLinkSec = styled(Link)`
     &:hover {
         transition: all 0.2s ease-in-out;
         background: #bf4b49;
-        color: #010606;
+        color: #000;
     }
     
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #000;
     }
 `;

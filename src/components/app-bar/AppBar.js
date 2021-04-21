@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Alert } from 'react-bootstrap'
 import { useAuth } from './../../contexts/AuthContext';
 import { DashboardContainer, BarWrap, AppLogo, ButtonWrap, ButtonLink } from './AppBarStyles';
+import UserSidebar from './../user-sidebar/UserSidebar';
 
 
 export default function AppBar() {
@@ -25,6 +26,7 @@ export default function AppBar() {
     return (
         <>
             <DashboardContainer>
+                <UserSidebar />
                 <BarWrap>
                     <AppLogo to="/">Shopping Wishlist</AppLogo>
                     <ButtonWrap>

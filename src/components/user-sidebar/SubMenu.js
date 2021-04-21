@@ -20,8 +20,6 @@ const SidebarLink = styled(Link)`
         color: #f4dcd9;
         cursor: pointer;
     }
-
-
 `;
 
 const SidebarLabel = styled.span`
@@ -44,7 +42,6 @@ const DropdownLink = styled(Link)`
         color: #f4dcd9;
         cursor: pointer;
     }
-
 `;
 
 export default function SubMenu({item}) {

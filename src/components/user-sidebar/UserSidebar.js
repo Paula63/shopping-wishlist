@@ -58,7 +58,7 @@ export default function UserSidebar() {
         <>
             <IconContext.Provider value={{ color: '#f4dcd9' }}>
                 <Nav>
-                    <NavIcon to='#'>
+                    <NavIcon to='#' style={{ marginLeft: '-185px' }} >
                         <FaIcons.FaBars onClick={showSidebar} />
                     </NavIcon>
                     <SidebarNav sidebar={sidebar}>

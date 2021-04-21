@@ -1,14 +1,12 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import AppBar from './app-bar/AppBar';
-import UserSidebar from './user-sidebar/UserSidebar';
 import { ButtonLinkSec, ButtonWrapper, PageContainer, PageName, PageWrap } from './ReusablePage';
 
 export default function Setting() {
     return (
         <>
             <AppBar />
-            <UserSidebar />
             <PageContainer>
                 <PageWrap>
                     <PageName>

@@ -3,7 +3,6 @@ import { Form, Button, Card, Alert, Container } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { useHistory } from 'react-router-dom'
 import AppBar from './app-bar/AppBar';
-import UserSidebar from './user-sidebar/UserSidebar';
 import { PageContainer, PageName, PageWrap, ButtonWrapper, ButtonLinkSec } from './ReusablePage';
 
 export default function UpdateProfile(){
@@ -47,7 +46,6 @@ export default function UpdateProfile(){
     return(
         <>
             <AppBar />
-            <UserSidebar />
             <PageContainer>
                 <PageWrap>
                     <PageName>
@@ -86,7 +84,7 @@ export default function UpdateProfile(){
                                         ref={passwordConfirmRef} 
                                         placeholder="Leave blank to keep the same" />
                                 </Form.Group>
-                                <Button disabled={loading} className="w-100" style={{ background: '#bf4b49' }} variant="outline-light" type="Submit">Update</Button>
+                                <Button disabled={loading} className="w-100" style={{ background: '#bf4b49', borderRadius: '15px' }} variant="outline-light" type="Submit">Update</Button>
                             </Form>
                         </Card.Body>
                     </Card>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import AppBar from './app-bar/AppBar';
-import UserSidebar from './user-sidebar/UserSidebar';
 import { PageContainer, PageName, PageWrap, ButtonWrapper, ButtonLinkSec } from './ReusablePage';
 
 export default function Profile() {
@@ -12,7 +11,6 @@ export default function Profile() {
     return (
         <>
             <AppBar />
-            <UserSidebar />
             <PageContainer>
                 <PageWrap>
                     <PageName>

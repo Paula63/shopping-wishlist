@@ -8,7 +8,7 @@ import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 
 const Nav = styled.div`
-    background: #63251e;
+    background: #000033;
     height: 35px;
     display: flex;
     justify-content: flex-start;
@@ -22,16 +22,15 @@ export const NavIcon = styled(Link)`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: #f4dcd9;
+    color: #fff;
     
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #f4dcd9;
     }
 `;
 
 const SidebarNav = styled.nav`
-    background: #63251e;
+    background: #000033;
     width: 250px;
     height: 100vh;
     display: flex;
@@ -56,7 +55,7 @@ export default function UserSidebar() {
 
     return (
         <>
-            <IconContext.Provider value={{ color: '#f4dcd9' }}>
+            <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav>
                     <NavIcon to='#' style={{ marginLeft: '-185px' }} >
                         <FaIcons.FaBars onClick={showSidebar} />

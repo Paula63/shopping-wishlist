@@ -41,7 +41,7 @@ export default function ForgotPassword(){
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control type="email" ref={emailRef} required />
                             </Form.Group>
-                            <Button disabled={loading} className="w-100" type="Submit">Reset Password</Button>
+                            <Button disabled={loading} className="w-100" style={{ background: '#588cfc' }} type="Submit">Reset Password</Button>
                         </Form>
                         <div className = "w-100 text-center mt-3">
                             <Link to="/login">Log In</Link>

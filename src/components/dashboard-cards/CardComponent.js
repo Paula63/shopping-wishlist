@@ -11,7 +11,7 @@ const CardComponent = props => {
             <div className="holder-body text-dark">
                 <h4 className="holder-title">{props.title}</h4>
                 <p className="holder-text text-secondary">{props.desc}</p>
-                <Button style={{ background: '#bf4b49', borderRadius: '15px' }} variant="outline-light" type="Submit">
+                <Button className="holder-button" style={{ borderRadius: '15px' }} variant="outline-light" type="Submit">
                     <a href={props.link} className="effect">Start Shopping</a>
                 </Button>
             </div>

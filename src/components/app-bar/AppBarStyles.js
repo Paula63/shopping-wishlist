@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link as LinkRoute } from 'react-router-dom';
 
 export const DashboardContainer = styled.nav`
-background: #63251e;
+background: #000033;
 height: 80px;
 display: flex;
 justify-content: center;
@@ -28,7 +28,7 @@ export const BarWrap = styled.div`
 `;
 
 export const AppLogo = styled(LinkRoute)`
-    color: #f4dcd9;
+    color: #fff;
     justify-self: flex-start;
     cursor: pointer;
     font-size: 1.5rem;
@@ -40,7 +40,7 @@ export const AppLogo = styled(LinkRoute)`
 
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #f4dcd9;
+        color: #fff;
     }
 `;
 
@@ -56,10 +56,10 @@ export const ButtonWrap = styled.nav`
 
 export const ButtonLink = styled(LinkRoute)`
     border-radius: 50px;
-    background: #bf4b49;
+    background: #588cfc;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #fff;
     font-size: 16px;
     outline: none;
     border: none;
@@ -69,12 +69,11 @@ export const ButtonLink = styled(LinkRoute)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: #f4dcd9;
+        background: #dcffff;
         color: #010606;
     }
     
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #000;
     }
 `;

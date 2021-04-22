@@ -84,7 +84,7 @@ export default function UpdateProfile(){
                                         ref={passwordConfirmRef} 
                                         placeholder="Leave blank to keep the same" />
                                 </Form.Group>
-                                <Button disabled={loading} className="w-100" style={{ background: '#bf4b49', borderRadius: '15px' }} variant="outline-light" type="Submit">Update</Button>
+                                <Button disabled={loading} className="w-100" style={{ background: '#588cfc', borderRadius: '15px' }} variant="outline-light" type="Submit">Update</Button>
                             </Form>
                         </Card.Body>
                     </Card>

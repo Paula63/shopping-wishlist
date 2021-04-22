@@ -3,10 +3,10 @@ import { Link as LinkRoute } from 'react-router-dom';
 
 export const Button = styled(LinkRoute)`
     border-radius: 50px;
-    background: ${({primary}) => (primary ? '#bf4b49' : '#f4dcd9')};
+    background: ${({primary}) => (primary ? '#588cfc' : '#dcffff')};
     white-space: nowrap;
     padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
-    color: ${({dark}) => (dark ? '#010606' : '#f4dcd9')};
+    color: ${({dark}) => (dark ? '#fff' : '#010606')};
     font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
     outline: none;
     border: none;
@@ -18,11 +18,11 @@ export const Button = styled(LinkRoute)`
 
     &:hover{
         transition: all 0.2s ease-in-out;
-        background: ${({primary}) => (primary ? '#f4dcd9' : '#bf4b49')};
+        background: ${({primary}) => (primary ? '#dcffff' : '#588cfc')};
+        color: #010606;
     }
 
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #000;
     }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
-    background-color: #63251e;
+    background-color: #000033;
 `;
 
 export const FooterWrap = styled.div`
@@ -40,7 +40,7 @@ export const FooterLinkItems = styled.div`
     text-align: left;
     width: 160px;
     box-sizing: border-box;
-    color: #f4dcd9
+    color: #000
 
     @media screen and (max-width: 420px) {
         margin: 0;
@@ -50,13 +50,13 @@ export const FooterLinkItems = styled.div`
 `;
 
 export const FooterLinkTitle = styled.h1`
-    font-size: 17px;
+    font-size: 22px;
     margin-bottom: 16px;
-    color: #bf4b49
+    color: #92b4fd;
 `;
 
 export const FooterLink = styled(Link)`
-    color: #f4dcd9;
+    color: #fff;
     text-decoration: none;
     margin-bottom: 0.5rem;
     font-size: 14px;
@@ -86,6 +86,6 @@ export const CopyRightWrap = styled.div`
 `;
 
 export const WebsiteRights = styled.small`
-    color: #f4dcd9;
-    margin-left: 80px;
+    color: #000;
+    margin-left: 90px;
 `;

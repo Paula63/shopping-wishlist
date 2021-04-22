@@ -35,6 +35,18 @@
 }
 
 .effect:hover{
-    color: #fff;
+    color: #010606;
     text-decoration: none;
+}
+
+.holder-button{
+    background: #588cfc !important;
+    color: #fff;
+}
+
+.holder-button:hover{
+    background: #dcffff !important;
+    text-decoration: none;
+    border-color: #dcffff;
+    color: #010606 !important;
 }

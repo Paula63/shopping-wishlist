@@ -35,7 +35,7 @@ export const ButtonWrapper = styled.div`
 
 export const ButtonLinkSec = styled(Link)`
     border-radius: 50px;
-    background: #bf4b49;
+    background: #588cfc;
     white-space: nowrap;
     padding: 10px 22px;
     color: #fff;
@@ -48,8 +48,8 @@ export const ButtonLinkSec = styled(Link)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: #bf4b49;
-        color: #000;
+        background: #dcffff;
+        color: #010606;
     }
     
     &:focus, &:hover, &:visited, &:link, &:active {

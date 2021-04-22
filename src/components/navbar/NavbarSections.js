@@ -3,7 +3,7 @@ import { Link as LinkRoute } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 
  export const Nav = styled.nav`
-    background: ${({scrollNav}) => (scrollNav ? '#63251e' : 'transparent')};
+    background: ${({scrollNav}) => (scrollNav ? '#000033' : 'transparent')};
     height: 80px;
     margin-top: -80px;
     display: flex;
@@ -30,7 +30,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkRoute)`
-    color: #f4dcd9;
+    color: #fff;
     justify-self: flex-start;
     cursor: pointer;
     font-size: 1.5rem;
@@ -42,7 +42,7 @@ export const NavLogo = styled(LinkRoute)`
 
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #f4dcd9;
+        color: #fff;
     }
 `;
 
@@ -57,7 +57,7 @@ export const MobileIcon = styled.div`
         transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
-        color: #f4dcd9;
+        color: #fff;
     }
 `;
 
@@ -78,7 +78,7 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinks = styled(LinkScroll)`
-    color: #f4dcd9;
+    color: #fff;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -87,13 +87,13 @@ export const NavLinks = styled(LinkScroll)`
     cursor: pointer;
 
     &.active {
-        border-bottom: 3px solid #f4dcd9;
+        border-bottom: 3px solid #fff;
         text-decoration: none;
     }
 
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #f4dcd9;
+        color: #fff;
     }
 `;
 
@@ -109,10 +109,10 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkRoute)`
     border-radius: 50px;
-    background: #bf4b49;
+    background: #588cfc;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #fff;
     font-size: 16px;
     outline: none;
     border: none;
@@ -122,12 +122,11 @@ export const NavBtnLink = styled(LinkRoute)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: #f4dcd9;
+        background: #dcffff;
         color: #010606;
     }
     
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: #000;
     }
 `;

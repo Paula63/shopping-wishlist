@@ -21,7 +21,7 @@ export default function NewBoardForm() {
                     </Card.Body>
                 </Card>
                 <div className = "w-100 text-center mt-2">
-                    <Link to="/">Cancel</Link>
+                    <Link to="/boards">Cancel</Link>
                 </div>
             </div>
         </Container>

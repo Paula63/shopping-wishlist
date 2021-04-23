@@ -15,7 +15,7 @@ export const SidebarData = [
     },
     {
         title: 'Wish Boards',
-        path: '/',
+        path: '/boards',
         icon: <RiIcons.RiArtboardLine />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpen: <RiIcons.RiArrowUpSFill />,

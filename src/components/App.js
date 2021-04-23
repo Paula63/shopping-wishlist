@@ -8,7 +8,9 @@ import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
 import Landing from "./Landing";
 import Setting from "./Setting";
-import { Boards, Gardening, Home, Clothing } from "./Boards";
+import WishboardHome from './wish-boards/WishboardHome';
+import NewBoardForm from './wish-boards/NewBoardForm';
+import { Gardening, Home, Clothing } from "./Boards";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -29,7 +31,8 @@ function App() {
               <Route exact path="/" component={Dashboard} />
               <Route path="/main" component={Landing} />
               <PrivateRoute exact path="/settings" component={Setting} />
-              <PrivateRoute exact path="/boards" component={Boards} />
+              <PrivateRoute exact path="/boards" component={WishboardHome} />
+              <PrivateRoute exact path="/new-board" component={NewBoardForm} />
               <PrivateRoute exact path="/boards/gardening" component={Gardening} />
               <PrivateRoute exact path="/boards/home" component={Home} />
               <PrivateRoute exact path="/boards/clothing" component={Clothing} />

@@ -11,7 +11,7 @@ export default function WishboardHome() {
     return (
         <>
             <AppBar />
-            <h2 className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+            <h2 setBoardsCreated={setBoardsCreated} className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>
                 Your Wish Boards
             </h2>
             {boardsCreated && 
@@ -19,7 +19,8 @@ export default function WishboardHome() {
                         Start Creating Boards
                 </h2>
             }
-            <Button to="/new-board" 
+            <Button 
+                to="/new-board" 
                 primary="true" 
                 dark="true"
                 smooth={true} 
@@ -31,7 +32,7 @@ export default function WishboardHome() {
             >
                 Create New Wish Board
             </Button>
-            <Container>
+            <Container setBoardsCreated={setBoardsCreated}>
                 <Row className="justify-content-md-center">
                     <Col md='auto'>
                         <WishboardList />

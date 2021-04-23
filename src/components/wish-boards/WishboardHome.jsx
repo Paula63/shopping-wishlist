@@ -7,6 +7,17 @@ import WishboardList from './WishboardList';
 export default function WishboardHome() {
 
     const [boardsCreated, setBoardsCreated] = useState(false);
+    const [board, setBoard] = useState();
+    const [selectedBoard, setSelectedBoard] = useState(null);
+
+    function handleCreateBoard(boards) {
+        setBoard([...board, boards])
+    }
+
+    function handleCreateBoard(boards) {
+        setSelectedBoard(boards);
+    }
+
 
     return (
         <>
@@ -22,12 +33,13 @@ export default function WishboardHome() {
             <Button 
                 to="/new-board" 
                 primary="true" 
-                dark="true"
-                smooth={true} 
-                duration={500} 
-                spy={true} 
+                setBoard={setBoard}
+                dark="true" 
                 exact='true' 
                 offset={-80}
+                // eslint-disable-next-line react/jsx-no-duplicate-props
+                setBoard={setBoard}
+                createBoard={handleCreateBoard}
                 style={{ width: 'auto', float: 'right', marginTop: '-55px', marginRight: '175px' }}
             >
                 Create New Wish Board
@@ -35,7 +47,7 @@ export default function WishboardHome() {
             <Container setBoardsCreated={setBoardsCreated}>
                 <Row className="justify-content-md-center">
                     <Col md='auto'>
-                        <WishboardList />
+                        <WishboardList board={board} />
                     </Col>
                 </Row>
             </Container>

@@ -8,14 +8,14 @@ export default function WishboardHome() {
 
     const [boardsCreated, setBoardsCreated] = useState(false);
     const [board, setBoard] = useState();
-    const [selectedBoard, setSelectedBoard] = useState(null);
+    const [selectBoard, setSelectBoard] = useState(null);
 
     function handleCreateBoard(boards) {
         setBoard([...board, boards])
     }
 
-    function handleCreateBoard(boards) {
-        setSelectedBoard(boards);
+    function handleSelectBoard(boards) {
+        setSelectBoard(boards);
     }
 
 
@@ -47,7 +47,7 @@ export default function WishboardHome() {
             <Container setBoardsCreated={setBoardsCreated}>
                 <Row className="justify-content-md-center">
                     <Col md='auto'>
-                        <WishboardList board={board} />
+                        <WishboardList board={board} selectBoard={handleSelectBoard} />
                     </Col>
                 </Row>
             </Container>

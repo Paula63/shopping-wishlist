@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
-export default function Wishboards() {
+export default function Wishboards({boards}) {
     return (
         <Card className="d-flex align-items-center justify-content-center mt-3 shadow" style={{ width: '34rem', borderRadius: '18px' }} >
             <Card.Body>

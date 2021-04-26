@@ -1,25 +1,60 @@
 import React, { useState } from 'react';
-import { Container, Card, Form } from 'react-bootstrap';
-import { Button } from '../ButtonElement';
+import app from './../../firebase';
+import { v4 as uuidv4 } from "uuid";
+import { Container, Card, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import cuid from 'cuid';
 import AppBar from '../app-bar/AppBar';
 
-export default function NewBoardForm({ setBoard, createBoard }) {
+// const db = app.database();
 
-    const initialValues = {
+export default function NewBoardForm() {
+
+    // eslint-disable-next-line no-lone-blocks
+    {/*const initialValues = {
         title: '',
     };
 
     const [values, setValues] = useState(initialValues);
 
-    function handleFormSubmit() {
-        createBoard({...values, id: cuid()});
+    const handleFormSubmit = e => {
+        e.preventDefault();
+        props.addOrEdit(values);
     }
 
-    function handleInputChange(e) {
+    const handleInputChange = e => {
         const {name, value} = e.target;
         setValues({ ...values, [name]: value });
+    } */}
+
+    // const [title, setTitle] = useState('');
+    // const { id } = useParams();
+
+    // eslint-disable-next-line no-lone-blocks
+    {/* const handleInputChange = (e) => {
+        setTitle(e.target.value)
+    } */}
+
+    // eslint-disable-next-line no-lone-blocks
+    {/* const createBoard = () => {
+        const boardRef = database.database().ref("wishboard");
+        const board = {
+            title,
+            complete: false,
+        };
+        boardRef.push(board);    
+    } */}
+
+    //add new board 
+    const ref = app.firestore().collection("wishboards");
+    const [title, setTitle] = useState("");
+
+    function addWishboard(newWishboard) {
+        ref
+            .doc(newWishboard.id)
+            .set(newWishboard)
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     return (
@@ -32,26 +67,18 @@ export default function NewBoardForm({ setBoard, createBoard }) {
                             <h2 className="text-center mb-4">
                                 Create New Wish Board
                             </h2>
-                            <Form onSubmit={handleFormSubmit}>
+                            <Form>
                                 <Form.Group>
                                     <Form.Label>Wish Board Name</Form.Label>
                                     <Form.Control 
                                         type="text" 
                                         placeholder="Enter Wish Board Name" 
                                         name="title"
-                                        value={values.title} 
-                                        onChange={(e) => handleInputChange(e)} 
-                                        required 
+                                        onChange={(e) => setTitle(e.target.value)}
+                                        // required 
                                     />
                                 </Form.Group>
-                                <Button 
-                                    to="/boards" 
-                                    primary="true" 
-                                    dark="true"
-                                    exact='true' 
-                                    offset={-80}
-                                    style={{ height: '40px' }}
-                                >
+                                <Button onClick={() => addWishboard({ title, id: uuidv4() })} className="w-100" style={{ background: '#588cfc' }} variant="outline-light" type="submit">
                                     Save
                                 </Button>
                             </Form>

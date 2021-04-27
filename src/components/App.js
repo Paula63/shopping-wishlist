@@ -10,6 +10,7 @@ import Landing from "./Landing";
 import Setting from "./Setting";
 import WishboardHome from './wish-boards/WishboardHome';
 import NewBoardForm from './wish-boards/NewBoardForm';
+import Items from './items/Items';
 import { Gardening, Home, Clothing } from "./Boards";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -32,7 +33,8 @@ function App() {
               <Route path="/main" component={Landing} />
               <PrivateRoute exact path="/settings" component={Setting} />
               <PrivateRoute exact path="/boards" component={WishboardHome} />
-              <PrivateRoute exact path="/new-board" component={NewBoardForm} />
+              <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />
+              <PrivateRoute exact path="/boards/items" component={Items} />
               <PrivateRoute exact path="/boards/gardening" component={Gardening} />
               <PrivateRoute exact path="/boards/home" component={Home} />
               <PrivateRoute exact path="/boards/clothing" component={Clothing} />

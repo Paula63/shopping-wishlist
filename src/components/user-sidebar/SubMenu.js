@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import app from './../../firebase';
 import styled from 'styled-components';
+import * as MdIcons from 'react-icons/md';
+import * as RiIcons from 'react-icons/ri';
 
 const SidebarLink = styled(Link)`
     display: flex;
@@ -29,7 +32,7 @@ const SidebarLabel = styled.span`
 const DropdownLink = styled(Link)`
     background: #000033;
     height: 60px;
-    padding-left: 3rem;
+    padding-left: 4rem;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -44,37 +47,78 @@ const DropdownLink = styled(Link)`
     }
 `;
 
-export default function SubMenu({item}) {
+export default function SubMenu() {
 
     const [subnav, setSubnav] = useState(false);
 
+    const [wishboards, setWishboards] = useState([]);
+
     const showSubnav = () => setSubnav(!subnav);
+
+    const ref = app.firestore().collection("wishboards");
+
+    function getWishboards() {
+        ref.onSnapshot((querySnapshot) => {
+            const items = [];
+            querySnapshot.forEach((doc) => {
+                items.push(doc.data());
+            })
+            setWishboards(items);
+        });
+    }
+
+    useEffect(() => {
+        getWishboards();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <>
-            <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
+            <div>
+            <SidebarLink to='/profile'>
                 <div>
-                    {item.icon}
-                    <SidebarLabel>
-                        {item.title}
-                    </SidebarLabel>
-                </div>
-                <div>
-                    {item.subNav && subnav 
-                    ? item.iconOpened 
-                    : item.subNav 
-                    ? item.iconClosed 
-                    : null}
+                    <MdIcons.MdAccountCircle />
+                    <SidebarLabel>Profile</SidebarLabel>
                 </div>
             </SidebarLink>
-            {subnav && item.subNav.map((item, index) => {
-                return (
-                    <DropdownLink to={item.path} key={index}>
-                        {item.icon}
-                        <SidebarLabel>{item.title}</SidebarLabel>
+            </div>
+            <SidebarLink to='/settings'>
+                <div>
+                    <RiIcons.RiSettings3Fill />
+                    <SidebarLabel>Settings</SidebarLabel>
+                </div>
+            </SidebarLink>
+            <SidebarLink to='/boards' onClick={wishboards.subNav && showSubnav}>
+                <div>
+                    <RiIcons.RiArtboardLine />
+                    <SidebarLabel>Wish Boards</SidebarLabel>
+                </div>
+            </SidebarLink>
+            {wishboards && wishboards.map((wishboard) => {
+                return(
+                    <DropdownLink to='/boards' key={wishboard.id}>
+                        <RiIcons.RiArtboard2Line />
+                        <SidebarLabel>{wishboard.title}</SidebarLabel>
                     </DropdownLink>
                 )
             })}
+            {/* {toggleVisibility ? true &&
+                <div>
+                    <RiIcons.RiArrowUpSFill />
+                    {wishboards && wishboards.map((wishboard) => {
+                        return(
+                            <DropdownLink to='/boards' key={wishboard.id} onClick={notify}>
+                                <RiIcons.RiArtboard2Line />
+                                <SidebarLabel>{wishboard.title}</SidebarLabel>
+                            </DropdownLink>
+                        )
+                    })}
+                </div> 
+            : 
+                <div>
+                    <RiIcons.RiArrowDownSFill />
+                </div>
+            } */}
         </>
     )
 }

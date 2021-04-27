@@ -13,7 +13,7 @@ export default function WishboardHome() {
                 Your Wish Boards
             </h2>
             <Button 
-                to="/new-board" 
+                to="boards/new-board" 
                 primary="true" 
                 dark="true" 
                 exact='true' 

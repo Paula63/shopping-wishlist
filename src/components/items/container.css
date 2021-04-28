@@ -1,38 +1,33 @@
-.holder{
+.item{
     margin-top: 3rem;
     font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
 }
 
-.holder:hover{
+.item:hover{
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253)!important;
 }
 
-.holder-body{
+.item-title{
     padding: 3rem 0 !important;
 }
 
-.holder-text{
+.item-text{
     font-size: 0.9rem;
-    padding: 0.4rem 1.9rem;
+    padding: 0.3rem 1.5rem;
 }
 
-.overflow{
+.cont{
     overflow: hidden;
 }
 
-.holder-img-top{
+.cont-size{
     width: 240px !important;
     height: 260px;
+    border-radius: 5px 5px 0 0;
 }
 
-.holder-button{
-    background: #588cfc !important;
-    color: #fff;
-}
-
-.holder-button:hover{
-    background: #dcffff !important;
-    text-decoration: none;
-    border-color: #dcffff;
-    color: #010606 !important;
+.item-img-top{
+    width: 100%;
+    height: auto;
 }

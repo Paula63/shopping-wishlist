@@ -17,7 +17,7 @@ export default function AppBar() {
 
         try{
             await logout()
-            history.push('/login')
+            history.push('/main')
         } catch{
             setError('Failed to log out')
         }

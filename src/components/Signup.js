@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Alert, Container } from 'react-bootstrap'
-import { useAuth } from '../contexts/AuthContext'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useRef, useState } from 'react';
+import { Form, Button, Card, Alert, Container } from 'react-bootstrap';
+import { useAuth } from '../contexts/AuthContext';
+import { Link, useHistory } from 'react-router-dom';
+import SocialAuth from './SocialAuth';
 
 export default function Signup(){
 
@@ -54,10 +55,12 @@ export default function Signup(){
                                 <Form.Control type="password" ref={passwordConfirmRef} required />
                             </Form.Group>
                             <Button disabled={loading} className="w-100" style={{ background: '#588cfc' }} variant="outline-light" type="Submit">Sign up</Button>
+                            <div className="w-100 text-center mt-2 mb-2">Or</div>
+                            <SocialAuth />
                         </Form>
                     </Card.Body>
                 </Card>
-                <div className = "w-100 text-center mt-2">
+                <div className="w-100 text-center mt-2">
                     Already have an account? <Link to="/login">Log In</Link>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Form, Button, Card, Alert, Container } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import SocialAuth from './SocialAuth';
 
 export default function Login(){
 
@@ -45,13 +46,15 @@ export default function Login(){
                                 <Form.Control type="password" ref={passwordRef} required />
                             </Form.Group>
                             <Button disabled={loading} className="w-100" style={{ background: '#588cfc' }} variant="outline-light" type="Submit">Log In</Button>
+                            <div className="w-100 text-center mt-2 mb-2">Or</div>
+                            <SocialAuth />
                         </Form>
-                        <div className = "w-100 text-center mt-3">
+                        <div className="w-100 text-center mt-3">
                             <Link to="/forgot-password">Forgot Password?</Link>
                         </div>
                     </Card.Body>
                 </Card>
-                <div className = "w-100 text-center mt-2">
+                <div className="w-100 text-center mt-2">
                     Need an account? <Link to="/signup">Sign Up</Link>
                 </div>
             </div>

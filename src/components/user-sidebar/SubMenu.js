@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import app from './../../firebase';
+import firebase from './../../firebase';
 import styled from 'styled-components';
 import * as MdIcons from 'react-icons/md';
 import * as RiIcons from 'react-icons/ri';
@@ -55,7 +55,7 @@ export default function SubMenu() {
 
     const showSubnav = () => setSubnav(!subnav);
 
-    const ref = app.firestore().collection("wishboards");
+    const ref = firebase.firestore().collection("wishboards");
 
     function getWishboards() {
         ref.onSnapshot((querySnapshot) => {

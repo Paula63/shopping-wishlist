@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import app from './../../firebase';
+import firebase from './../../firebase';
 import { v4 as uuidv4 } from "uuid";
 import { Container, Card, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -45,7 +45,7 @@ export default function NewBoardForm() {
     } */}
 
     //add new board 
-    const ref = app.firestore().collection("wishboards");
+    const ref = firebase.firestore().collection("wishboards");
     const [title, setTitle] = useState("");
 
     function addWishboard(newWishboard) {

@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Alert, Container } from 'react-bootstrap'
-import { useAuth } from '../contexts/AuthContext'
-import { useHistory } from 'react-router-dom'
-import AppBar from './app-bar/AppBar';
-import { PageContainer, PageName, PageWrap, ButtonWrapper, ButtonLinkSec } from './ReusablePage';
+import React, { useRef, useState } from 'react';
+import { Form, Card, Alert, Container } from 'react-bootstrap';
+import { useAuth } from '../../contexts/AuthContext';
+import { useHistory } from 'react-router-dom';
+import AppBar from '../app-bar/AppBar';
+import { Button } from '../ButtonElement';
+
 
 export default function UpdateProfile(){
 
@@ -15,7 +16,7 @@ export default function UpdateProfile(){
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value){
@@ -46,16 +47,19 @@ export default function UpdateProfile(){
     return(
         <>
             <AppBar />
-            <PageContainer>
-                <PageWrap>
-                    <PageName>
-                        Update Profile
-                    </PageName>
-                    <ButtonWrapper>
-                        <ButtonLinkSec to="/profile">Cancel Update</ButtonLinkSec>
-                    </ButtonWrapper>
-                </PageWrap>
-            </PageContainer>
+            <h2 className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                Update Profile
+            </h2>
+            <Button 
+                to="/profile" 
+                primary="true" 
+                dark="true" 
+                exact='true' 
+                offset={-80}
+                style={{ width: 'auto', float: 'right', marginTop: '-55px', marginRight: '205px' }}
+            >
+                Cancel Update
+            </Button>
             <Container border="info" className="d-flex align-items-center justify-content-center mt-3" >
                 <div className="w-100" style={{maxWidth: '400px'}}>
                     <Card>
@@ -84,7 +88,17 @@ export default function UpdateProfile(){
                                         ref={passwordConfirmRef} 
                                         placeholder="Leave blank to keep the same" />
                                 </Form.Group>
-                                <Button disabled={loading} className="w-100" style={{ background: '#588cfc', borderRadius: '15px' }} variant="outline-light" type="Submit">Update</Button>
+                                <Button 
+                                    disabled={loading} 
+                                    to="/profile" 
+                                    primary="true" 
+                                    dark="true" 
+                                    exact='true' 
+                                    offset={-80}
+                                    type="Submit"
+                                >
+                                    Update
+                                </Button>
                             </Form>
                         </Card.Body>
                     </Card>

@@ -1,17 +1,16 @@
 import React from "react";
 import Signup from "./Signup";
-import Profile from "./Profile";
+import Profile from "./profile/Profile";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
-import UpdateProfile from "./UpdateProfile";
+import UpdateProfile from "./profile/UpdateProfile";
 import Landing from "./Landing";
 import Setting from "./Setting";
 import WishboardHome from './wish-boards/WishboardHome';
 import NewBoardForm from './wish-boards/NewBoardForm';
 import Items from './items/Items';
-import { Gardening, Home, Clothing } from "./Boards";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -35,9 +34,6 @@ function App() {
               <PrivateRoute exact path="/boards" component={WishboardHome} />
               <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />
               <PrivateRoute exact path="/boards/items" component={Items} />
-              <PrivateRoute exact path="/boards/gardening" component={Gardening} />
-              <PrivateRoute exact path="/boards/home" component={Home} />
-              <PrivateRoute exact path="/boards/clothing" component={Clothing} />
             </Switch>
           </AuthProvider>
         </Router>

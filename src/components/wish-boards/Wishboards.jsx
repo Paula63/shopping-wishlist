@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import app from './../../firebase';
+import firebase from './../../firebase';
 import { Button } from 'react-bootstrap';
 
 
@@ -8,7 +8,7 @@ export default function Wishboards() {
     const [wishboards, setWishboards] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const ref = app.firestore().collection("wishboards");
+    const ref = firebase.firestore().collection("wishboards");
 
     function getWishboards() {
         setLoading(true);
@@ -24,6 +24,7 @@ export default function Wishboards() {
 
     useEffect(() => {
         getWishboards();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (loading) {

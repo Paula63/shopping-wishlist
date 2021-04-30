@@ -1,19 +1,15 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import AppBar from './app-bar/AppBar';
-import { ButtonLinkSec, ButtonWrapper, PageContainer, PageName, PageWrap } from './ReusablePage';
+import { ButtonLinkSec, ButtonWrapper } from './ReusablePage';
 
 export default function Setting() {
     return (
         <>
             <AppBar />
-            <PageContainer>
-                <PageWrap>
-                    <PageName>
-                        Settings
-                    </PageName>
-                </PageWrap>
-            </PageContainer>
+            <h2 className="d-flex align-items justify-content-center mt-5 mb-4" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                Settings
+            </h2>
             <Container className="flex align-items-center justify-content-center mt-3" style={{maxWidth: '900px'}}>
                 <div>
                     <Card>

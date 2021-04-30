@@ -60,16 +60,6 @@ export default function UpdateProfile(){
             >
                 Cancel Update
             </Button>
-            {/* <PageContainer>
-                <PageWrap>
-                    <PageName>
-                        Update Profile
-                    </PageName>
-                    <ButtonWrapper>
-                        <ButtonLinkSec to="/profile">Cancel Update</ButtonLinkSec>
-                    </ButtonWrapper>
-                </PageWrap>
-            </PageContainer> */}
             <Container border="info" className="d-flex align-items-center justify-content-center mt-3" >
                 <div className="w-100" style={{maxWidth: '400px'}}>
                     <Card>

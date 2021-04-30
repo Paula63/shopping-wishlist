@@ -1,6 +1,6 @@
 body{
     background-color: #fff;
-    width: 350px; 
+    width: 350px !important; 
     height: 450px; 
     border-radius: 4px;
 }

@@ -1,6 +1,6 @@
 body{
     background-color: #fff;
-    width: 350px; 
+    width: 350px !important; 
     height: 450px; 
     border-radius: 4px;
 }
@@ -57,20 +57,22 @@ body{
 
 .wishBoardSec{
     padding-bottom: 10px; 
-    font-size: 14px; 
+    font-size: 14px;
+    width: 350px;
     padding-left: 10px;
+    flex-wrap: wrap;
     color: #8e8d8a; 
 }
 
 .titleField{
     padding-right: 5px; 
     color: #8e8d8a;
-    flex: auto;
-    padding-top: 20px;
+    flex: left;
+    
 }
 
 .align{
-    flex: auto;
+    flex: left;
     flex-direction: row;
     align-items: flex-start;
 }
@@ -81,6 +83,7 @@ body{
 
 .productSection{
     width: 350px; 
+    color: #8e8d8a;
     height: 65%;
 }
 

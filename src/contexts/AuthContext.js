@@ -13,19 +13,19 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true)
 
     function signup(email, password) {
-        return firebase.auth.createUserWithEmailAndPassword(email, password);
+        return firebase.auth().createUserWithEmailAndPassword(email, password);
     }
 
     function login(email, password){
-        return firebase.auth.signInWithEmailAndPassword(email, password)
+        return firebase.auth().signInWithEmailAndPassword(email, password)
     }
 
     function logout() {
-        return firebase.auth.signOut()
+        return firebase.auth().signOut()
     }
 
     function resetPassword(email) {
-        return firebase.auth.sendPasswordResetEmail(email)
+        return firebase.auth().sendPasswordResetEmail(email)
     }
 
     function updateEmail(email) {

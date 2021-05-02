@@ -22,11 +22,8 @@
 //     })
 // })
 
-chrome.runtime.onMessage.addListener((msg, sender, response) => {
-    
-    if(msg.name === "saveItem") {
-        var getObj = msg.data;
-        console.log(getObj);
-    }
-
+chrome.runtime.onMessage.addListener('get-user-data', (response) => {
+    console.log("received user data", response);
+    // eslint-disable-next-line no-undef
+    initializeUI(response);
 });

@@ -1,3 +1,14 @@
+document.querySelector('input[name="reduction"]:checked').value();
+
+// if above does not work
+// var radioBtn = document.getElementsByName('reduction');
+// var radio_value;
+// for(var i=0; i<radioBtn.length; i++) {
+//     if(radioBtn[i].checked){
+//         radio_value = radioBtn[i].value;
+//     }
+// }
+
 chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
 
     //check the current tab

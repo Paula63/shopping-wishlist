@@ -24,8 +24,9 @@
 
 chrome.runtime.onMessage.addListener((msg, sender, response) => {
     
-    if(msg.name === "runCommands") {
+    if(msg.name === "saveItem") {
         var getObj = msg.data;
+        console.log(getObj);
     }
 
 });

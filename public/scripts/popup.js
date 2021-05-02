@@ -32,18 +32,35 @@ var optionValue = dropSelect.value;
 //     }
 // }
 
-// eslint-disable-next-line no-undef
-chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
+function saveItem(){
 
-    //check the current tab
-    var activeTab = tabs[0];
+    var saveArr = [];
 
-    //list of commands
-    var obj = {};
+    var saveDetails = document.getElementsByClassName('reduction list');
+    for(var k=0; k<saveDetails.length; k++){
+        var saveItem = {};
+        saveItem.type = saveDetails[k].querySelector('input').value;
+        saveItem.type = saveDetails[k].querySelector('select').value;
+        saveArr.push(saveItem);
+    }
+    console.log("array:", saveArr);
 
-    // eslint-disable-next-line no-undef
-    chrome.tabs.sendMessage(activeTab.id, {command: 'runCommands', data: obj});
+    chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
 
+        //check the current tab
+        var activeTab = tabs[0];
+    
+        //list of commands
+        var obj = saveArr;
+    
+        // eslint-disable-next-line no-undef
+        chrome.tabs.sendMessage(activeTab.id, {command: 'runCommands', data: obj});
+    
+    });
+}
+
+document.querySelector('.save-btn').addEventListener('click', function(){
+    saveItem();
 });
 
 

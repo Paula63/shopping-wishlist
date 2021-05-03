@@ -74,7 +74,7 @@ try{
 
     chrome.runtime.onMessage.addListener((msg, sender, resp) => {
         if(msg.command === "post") {
-            db.collection("wishboard").doc("test-doc").set({
+            db.collection("wishboards").doc("test-doc").set({
                 data: msg.data
             })
             .then(function() {
@@ -85,7 +85,7 @@ try{
             });
         }
         if(msg.command === "fetch") {
-            var docRef = db.collection("wishboard").doc("Shoes");
+            var docRef = db.collection("wishboards").doc("Shoes");
             docRef.get().then(function(doc){
                 if(doc.exists) {
                     resp({type: "result", status: "success", data: doc.data(), request: msg});

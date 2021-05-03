@@ -1,6 +1,8 @@
 // getting the selected radio button from the list of options
 // document.querySelector('input[name="reduction"]:checked').value;
 
+/*global chrome*/
+
 // if above does not work
 var radioBtn = document.getElementsByName('reduction');
 var radio_value;

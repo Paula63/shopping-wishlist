@@ -22,8 +22,31 @@
 //     })
 // })
 
-chrome.runtime.onMessage.addListener('get-user-data', (response) => {
-    console.log("received user data", response);
-    // eslint-disable-next-line no-undef
-    initializeUI(response);
+/*global chrome*/
+
+// chrome.runtime.onMessage.addListener('get-user-data', (response) => {
+//     console.log("received user data", response);
+//     // eslint-disable-next-line no-undef
+//     initializeUI(response);
+// });
+
+// get current domain
+chrome.runtime.sendMessage({command: "fetch"}, (response) => {
+    showData(response.data);
 });
+
+chrome.runtime.sendMessage({command: "post", data: "save item"}, (response) => {
+    showData(response.data);
+});
+
+var showData = function(data) {
+    console.log("Item: ", data);
+}
+
+// sending message to fetch data from the database
+// chrome.runtime.sendMessage({command: "fetch", data: {domain: domain}}, 
+// (response) => {
+//     parseItem(response.data, domain);
+// })
+
+// var parseItem;

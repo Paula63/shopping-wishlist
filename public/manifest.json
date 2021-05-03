@@ -1,26 +1,22 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Shopping Wishlist",
-  "version": "1.3.11",
+  "version": "1.3.7",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["scripts/content.js"],
-      "css": ["stylesheet/content.css"]
+      "css": ["stylesheet/content.css"],
+      "run_at": "document_end"
     }
   ],
   "background": {
-    "scripts": ["scripts/background.js"]
+    "service_worker": "background-wrapper.js"
   },
-  "permissions": [
-    "tabs", 
-    "activeTab", 
-    "<all_urls>",
-    "webRequest",
-    "webNavigation"
+  "host_permissions": [ 
+    "<all_urls>"
   ],
-  "content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com; object-src 'self';",
-  "browser_action": {
+  "action": {
     "default_icon": "images/shopping-bag.png",
     "default_popup": "interface/popup.html",
     "default_title": "Shopping Assistant"

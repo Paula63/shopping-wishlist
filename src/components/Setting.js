@@ -7,7 +7,7 @@ export default function Setting() {
     return (
         <>
             <AppBar />
-            <h2 className="d-flex align-items justify-content-center mt-5 mb-4" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+            <h2 data-testid="title" className="d-flex align-items justify-content-center mt-5 mb-4" style={{ fontFamily: 'Open Sans, sans-serif' }}>
                 Settings
             </h2>
             <Container className="flex align-items-center justify-content-center mt-3" style={{maxWidth: '900px'}}>

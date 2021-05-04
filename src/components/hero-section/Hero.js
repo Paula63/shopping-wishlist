@@ -27,7 +27,7 @@ export default function Hero() {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>
+                <HeroH1 data-testid="headline">
                     Easily Accessible Online Shopping Assistant
                 </HeroH1>
                 <HeroP>

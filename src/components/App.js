@@ -13,36 +13,30 @@ import NewBoardForm from './wish-boards/NewBoardForm';
 import Items from './items/Items';
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import { configureStore } from "../store/configureStore";
-
-const store = configureStore();
 
 function App() {
   return (
-      <Provider store={store}>
-          <Router>
-            <AuthProvider>
-              <Switch>
-                <PrivateRoute exact path="/profile" component={Profile} />
-                <PrivateRoute path="/update-profile" component={UpdateProfile} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/login" component={Login} />
-                <Route path="/forgot-password" component={ForgotPassword} />
-                {/* 
-                  Change the route of this to PrivateRoute to ensure that the user 
-                  can't access app without a valid account 
-                */}
-                <Route exact path="/" component={Dashboard} />
-                <Route path="/main" component={Landing} />
-                <PrivateRoute exact path="/settings" component={Setting} />
-                <PrivateRoute exact path="/boards" component={WishboardHome} />
-                <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />
-                <PrivateRoute exact path="/boards/items" component={Items} />
-              </Switch>
-            </AuthProvider>
-          </Router>
-        </Provider>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <PrivateRoute path="/update-profile" component={UpdateProfile} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+              {/* 
+                Change the route of this to PrivateRoute to ensure that the user 
+                can't access app without a valid account 
+              */}
+              <Route exact path="/" component={Dashboard} />
+              <Route path="/main" component={Landing} />
+              <PrivateRoute exact path="/settings" component={Setting} />
+              <PrivateRoute exact path="/boards" component={WishboardHome} />
+              <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />
+              <PrivateRoute exact path="/boards/items" component={Items} />
+            </Switch>
+          </AuthProvider>
+        </Router>
   )
 }
 

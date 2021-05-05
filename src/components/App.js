@@ -11,8 +11,10 @@ import Setting from "./Setting";
 import WishboardHome from './wish-boards/WishboardHome';
 import NewBoardForm from './wish-boards/NewBoardForm';
 import Items from './items/Items';
+import Sandbox from "./sandbox/Sandbox";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
               */}
               <Route exact path="/" component={Dashboard} />
               <Route path="/main" component={Landing} />
+              <Route path="/sandbox" component={Sandbox} />
               <PrivateRoute exact path="/settings" component={Setting} />
               <PrivateRoute exact path="/boards" component={WishboardHome} />
               <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />

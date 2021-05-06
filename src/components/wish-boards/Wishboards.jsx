@@ -53,14 +53,14 @@ export default function Wishboards() {
     }
 
     //edit wishboard
-    function editWishboard(updatedWishboard) {
-        ref
-            .doc(updatedWishboard.id)
-            .update(updatedWishboard)
-            .catch((err) => {
-                console.log(err);
-            });
-    }
+    // function editWishboard(updatedWishboard) {
+    //     ref
+    //         .doc(updatedWishboard.id)
+    //         .update(updatedWishboard)
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // }
 
     return (
         <>

@@ -34,7 +34,7 @@ export default function Footer() {
                 </FooterLinksContainer>
                 <CopyRight>
                     <CopyRightWrap>
-                        <WebsiteRights>Shopping Wishlist © {new Date().getFullYear()} All Rights Reserver</WebsiteRights>
+                        <WebsiteRights>Shopping Wishlist © {new Date().getFullYear()} All Rights Reserved</WebsiteRights>
                     </CopyRightWrap>
                 </CopyRight>
             </FooterWrap>

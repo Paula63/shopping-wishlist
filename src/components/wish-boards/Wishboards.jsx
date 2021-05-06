@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import firebase from './../../firebase';
 import * as RiIcons from 'react-icons/ri';
+import * as BiIcons from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
 import { getWishboardsFromFirestore, dataFromSnapshot } from '../../firebase/firestoreService';
-
+import { Link } from 'react-router-dom';
 
 export default function Wishboards() {
 
@@ -79,12 +80,16 @@ export default function Wishboards() {
                                 </Button>
                             </div> */}
                         </div>
-                        <div className="ml-4" style={{ width: '30px', height: '30px'}}>
+                        <div className="flex flex-row ml-4">
                             <RiIcons.RiDeleteBin2Line 
-                                className="d-flex justify-content-center" 
-                                style={{ width: '100%', height: '100%', float: 'right', justifySelf: 'end'}} 
+                                style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end'}} 
                                 onClick={() => deleteWishboard(wishboard)} 
                             />
+                            <Link to="boards/items/" style={{ color: '#000' }}>
+                                <BiIcons.BiWindowOpen 
+                                    style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end', marginRight: '5px'}} 
+                                />
+                            </Link>
                         </div>
                 </Button>
             ))}

@@ -1,4 +1,5 @@
 import React from "react";
+import { ToastContainer } from 'react-toastify';
 import Signup from "./Signup";
 import Profile from "./profile/Profile";
 import Login from "./Login";
@@ -15,9 +16,10 @@ import Sandbox from "./sandbox/Sandbox";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-
 function App() {
   return (
+      <>
+        <ToastContainer position='bottom-right' />
         <Router>
           <AuthProvider>
             <Switch>
@@ -40,6 +42,7 @@ function App() {
             </Switch>
           </AuthProvider>
         </Router>
+      </>
   )
 }
 

@@ -1,8 +1,7 @@
-import { SidebarData } from '../components/user-sidebar/SidebarData';
-import { CREATE_WISHBOARD, DELETE_WISHBOARD, UPDATE_WISHBOARD } from './boardConstants';
+import { CREATE_WISHBOARD, DELETE_WISHBOARD, FETCH_WISHBOARD, UPDATE_WISHBOARD } from './boardConstants';
 
 const initialState = {
-    wishboards: SidebarData
+    wishboards: [],
 }
 
 export default function wishboardReducer(state = initialState, {type, payload}) {
@@ -21,6 +20,11 @@ export default function wishboardReducer(state = initialState, {type, payload}) 
             return{
                 ...state,
                 wishboards: [...state.wishboards.filter(board => board.id !== payload)]
+            }
+        case FETCH_WISHBOARD:
+            return{
+                ...state,
+                wishboards: payload
             }
         default:
             return state;

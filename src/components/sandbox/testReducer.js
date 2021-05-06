@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { asyncActionError, asyncActionFinish, asyncActionStart } from "../../store/asyncReducer";
 import { delay } from "../../util/util";
 
@@ -26,6 +27,7 @@ export function decrement(amount) {
             dispatch(asyncActionFinish());
         } catch (error) {
             dispatch(asyncActionError(error));
+            toast.error(error)
         }
     }
 }

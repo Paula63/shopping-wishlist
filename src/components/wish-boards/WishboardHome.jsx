@@ -6,6 +6,10 @@ import Wishboards from './Wishboards';
 
 export default function WishboardHome() {
 
+    // const {loading} = useSelector(state => state.async);
+
+    // if(loading) return <LoadingComponent />
+
     return (
         <>
             <AppBar />

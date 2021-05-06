@@ -86,6 +86,6 @@ export const CopyRightWrap = styled.div`
 `;
 
 export const WebsiteRights = styled.small`
-    color: #000;
+    color: #fff;
     margin-left: 90px;
 `;

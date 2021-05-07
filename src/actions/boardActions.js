@@ -35,3 +35,10 @@ export function loadWishboards() {
         }
     }
 }
+
+export function listenToWishboards(wishboard) {
+    return {
+        type: FETCH_WISHBOARD,
+        payload: wishboard
+    }
+}

@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import firebase from './../../firebase';
 import * as RiIcons from 'react-icons/ri';
 import * as BiIcons from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
-import { getWishboardsFromFirestore, dataFromSnapshot } from '../../firebase/firestoreService';
+import { listenToWishboardsFromFirestore } from '../../firebase/firestoreService';
 import { Link } from 'react-router-dom';
+import { listenToWishboards } from '../../actions/boardActions';
+import { useDispatch, useSelector } from 'react-redux';
+import useFirestoreCollection from '../../hooks/useFirestoreCollection';
 
 export default function Wishboards() {
 
+    const dispatch = useDispatch();
+    // const {wishboards} = useSelector((state) => state.wishboard)
     const [wishboards, setWishboards] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -30,27 +35,32 @@ export default function Wishboards() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    useEffect(() => {
-        const unsubscribe = getWishboardsFromFirestore({
-            next: snapshot => console.log(snapshot.docs.map(docSnapshot => dataFromSnapshot(docSnapshot))),
-            error: error => console.log(error)
-        })
-        return unsubscribe
-    })
+    // useFirestoreCollection({
+    //     query: () => listenToWishboardsFromFirestore(),
+    //     data: wishboards => dispatch(listenToWishboards(wishboards)),
+    //     deps: [dispatch]
+    // });
 
-    if (loading) {
-        return <h1>Loading ..</h1>
-    }
+    // not needed
+    // useFirestoreDoc({
+    //     query: () => listenToWishboardFromFirestore(match.params.id),
+    //     data: wishboard => dispatchEvent(listenToWishboards([wishboard])),
+    //     deps: [match.params.id]
+    // });
+
+    // if (loading) {
+    //     return <h1>Loading ..</h1>
+    // }
 
     // delete board
-    function deleteWishboard(wishboard) {
-        ref
-            .doc(wishboard.id)
-            .delete()
-            .catch((err) => {
-                console.log(err);
-            });
-    }
+    // function deleteWishboard(wishboard) {
+    //     ref
+    //         .doc(wishboard.id)
+    //         .delete()
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // }
 
     //edit wishboard
     // function editWishboard(updatedWishboard) {
@@ -83,9 +93,9 @@ export default function Wishboards() {
                         <div className="flex flex-row ml-4">
                             <RiIcons.RiDeleteBin2Line 
                                 style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end'}} 
-                                onClick={() => deleteWishboard(wishboard)} 
+                                // onClick={() => deleteWishboard(wishboard)} 
                             />
-                            <Link to="boards/items/" style={{ color: '#000' }}>
+                            <Link to={`/boards/items/${wishboard.id}`} style={{ color: '#000' }}>
                                 <BiIcons.BiWindowOpen 
                                     style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end', marginRight: '5px'}} 
                                 />

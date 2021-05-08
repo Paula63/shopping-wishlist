@@ -4,10 +4,10 @@ import firebase from '../../firebase';
 
 export default function ItemCard() {
 
-    const [wishboardItem, setWishboardItem] = useState([]);
+    const [savedItem, setsavedItem] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const ref = firebase.firestore().collection("wishboards").doc().collection('items');
+    const ref = firebase.firestore().collection("items");
 
     function getItems() {
         setLoading(true);
@@ -16,7 +16,8 @@ export default function ItemCard() {
             querySnapshot.forEach((doc) => {
                 items.push(doc.data());
             })
-            setWishboardItem(items);
+            setsavedItem(items);
+            console.log(items)
             setLoading(false);
         });
     }
@@ -28,17 +29,17 @@ export default function ItemCard() {
 
     return (
         <>
-            {wishboardItem.map((items) => (
-                <div className="item text-center shadow" style={{ width: '240px', height: '420px' }} key={items.id}>
-                    {/* <div className="cont cont-size">
-                        <a href={wishboard.items.pathURL}>
-                            <img src={wishboard.items.photoURL} alt="item" className="item-img-top" />
+            {savedItem.map((item) => (
+                <div className="item text-center shadow" style={{ width: '240px', height: '420px', marginRight: '8px' }} key={item.id}>
+                    <div className="cont cont-size">
+                        <a href={item.location}>
+                            <img src={item.photoURL} alt="item" className="item-img-top" />
                         </a>
-                    </div> */}
+                    </div>
                     <div className="item-title text-dark">
-                        <p className="item-name" style={{ marginTop: '-40px' }}>{items.displayName}</p>
-                        <p className="item-text text-secondary">Size: {items.size}</p>
-                        <p className="item-text text-secondary">Price: {items.price}</p>
+                        <p className="item-name" style={{ marginTop: '-40px' }}>{item.displayName}</p>
+                        <p className="item-text text-secondary">Size: {item.size}</p>
+                        <p className="item-text text-secondary">Price: {item.price}</p>
                     </div>
                 </div>
             ))}

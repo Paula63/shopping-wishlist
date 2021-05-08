@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import firebase from './../../firebase';
 import * as RiIcons from 'react-icons/ri';
 import * as BiIcons from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
-import { listenToWishboardsFromFirestore } from '../../firebase/firestoreService';
-import { Link } from 'react-router-dom';
-import { listenToWishboards } from '../../actions/boardActions';
-import { useDispatch, useSelector } from 'react-redux';
-import useFirestoreCollection from '../../hooks/useFirestoreCollection';
+// import { listenToWishboardsFromFirestore } from '../../firebase/firestoreService';
+import { Link, Route, Router } from 'react-router-dom';
+import Items from '../items/Items';
+import PrivateRoute from "../PrivateRoute";
+// import { listenToWishboards } from '../../actions/boardActions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import useFirestoreCollection from '../../hooks/useFirestoreCollection';
+
+export const WishboardRoute = styled(Router)`
+    color: #000;
+`;
 
 export default function Wishboards() {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     // const {wishboards} = useSelector((state) => state.wishboard)
     const [wishboards, setWishboards] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -95,7 +102,7 @@ export default function Wishboards() {
                                 style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end'}} 
                                 // onClick={() => deleteWishboard(wishboard)} 
                             />
-                            <Link to={`/boards/items/${wishboard.id}`} style={{ color: '#000' }}>
+                            <Link to={`/boards/${wishboard.id}`} style={{ color: '#000' }}>
                                 <BiIcons.BiWindowOpen 
                                     style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end', marginRight: '5px'}} 
                                 />

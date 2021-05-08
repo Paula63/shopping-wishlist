@@ -6,9 +6,13 @@ export default function Dashboard() {
     return (
         <>
             <AppBar />
-            <h2 className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>Shopping Inspiration</h2>
+            <h2 
+                className="d-flex align-items justify-content-center mt-5" 
+                style={{ fontFamily: 'Open Sans, sans-serif' }}
+            >
+                Shopping Inspiration
+            </h2>
             <Cards />
         </>
     )
 }
-

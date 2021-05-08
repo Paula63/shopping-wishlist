@@ -16,11 +16,21 @@ export default function SocialAuth() {
 
     return (
         <>
-            <Button onClick={() => handleSocialLogin('facebook')} className="w-100" style={{ background: '#000033', color: '#fff', marginBottom: '10px' }} variant="outline-light">
+            <Button 
+                onClick={() => handleSocialLogin('facebook')} 
+                className="w-100" 
+                style={{ background: '#000033', color: '#fff', marginBottom: '10px' }} 
+                variant="outline-light"
+            >
                 <RiIcons.RiFacebookFill className="mr-2" style={{ marginTop: '-3px' }} />
                 Login with Facebook
             </Button>
-            <Button onClick={() => handleSocialLogin('google')} className="w-100" style={{ background: '#c40000', color: '#fff' }} variant="outline-light">
+            <Button 
+                onClick={() => handleSocialLogin('google')} 
+                className="w-100" 
+                style={{ background: '#c40000', color: '#fff' }} 
+                variant="outline-light"
+            >
                 <SiIcons.SiGmail className="mr-3" style={{ marginTop: '-3px' }} />
                 Login with Gmail
             </Button>

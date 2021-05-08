@@ -45,7 +45,15 @@ export default function Login(){
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" ref={passwordRef} required />
                             </Form.Group>
-                            <Button disabled={loading} className="w-100" style={{ background: '#588cfc' }} variant="outline-light" type="Submit">Log In</Button>
+                            <Button 
+                                disabled={loading} 
+                                className="w-100" 
+                                style={{ background: '#588cfc' }} 
+                                variant="outline-light" 
+                                type="Submit"
+                            >
+                                Log In
+                            </Button>
                             <div className="w-100 text-center mt-2 mb-2">Or</div>
                             <SocialAuth />
                         </Form>

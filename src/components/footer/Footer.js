@@ -20,15 +20,15 @@ export default function Footer() {
                     <FooterLinksWrapper>
                         <FooterLinkItems>
                             <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/login">Create Account</FooterLink>
+                            <FooterLink to="/signup">Create Account</FooterLink>
                             <FooterLink to="/works">How it Works</FooterLink>
-                            <FooterLink to="/clients">Clients</FooterLink> 
+                            <FooterLink to="/services">Services</FooterLink> 
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Contact Us</FooterLinkTitle>
                             <FooterLink to="/contact">Contact</FooterLink>
                             <FooterLink to="/support">Support</FooterLink>
-                            <FooterLink to="/spons">Sponsorship</FooterLink> 
+                            <FooterLink to="/tips">Tips {"&"} Pointers</FooterLink> 
                         </FooterLinkItems>
                     </FooterLinksWrapper>
                 </FooterLinksContainer>

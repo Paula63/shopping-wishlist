@@ -22,6 +22,27 @@ export function dataFromSnapshot(snapshot) {
     }
 }
 
-export function getWishboardsFromFirestore(observer) {
-    return db.collection('wishboards').onSnapshot(observer);
+export function listenToWishboardsFromFirestore() {
+    return db.collection('wishboards');
+}
+
+export function listenToWishboardFromFirestore(wishboardId) {
+    return db.collection('wishboards').doc(wishboardId);
+}
+
+export function addItemToWishboardInFirestore(wishboards){
+    const wishboard = firebase.auth().currentUser;
+    return db.collection('wishboards').add({
+        ...wishboard,
+        name: wishboard.name,
+        items: firebase.firestore.FieldValue.arrayUnion({
+            id: wishboard.items.uid,
+            pathURL: wishboard.items.pathURL,
+            displayName: wishboard.items.displayName,
+            size: wishboard.items.size,
+            price: wishboard.items.price,
+            photoURL: wishboard.items.photoURL,
+            description: wishboard.items.description
+        })
+    })
 }

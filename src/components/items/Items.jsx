@@ -1,38 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from './../../firebase';
 import AppBar from './../app-bar/AppBar';
 import ItemCard from './ItemCard';
-import bag from './../../images/bag.jpg';
-import vans from './../../images/vans.jpg';
-import coat from './../../images/coat.jpg';
 
 export default function Items() {
+
+    const [wishboards, setWishboards] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    const ref = firebase.firestore().collection("wishboards");
+
+    function getWishboards() {
+        setLoading(true);
+        ref.onSnapshot((querySnapshot) => {
+            const items = [];
+            querySnapshot.forEach((doc) => {
+                items.push(doc.data());
+            })
+            setWishboards(items);
+            setLoading(false);
+        });
+    }
+
+    useEffect(() => {
+        getWishboards();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    if (loading) {
+        return <h1>Loading ..</h1>
+    }
+
     return (
         <>
             <AppBar />
-            <h2 className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>"Board Name"</h2>
-            <div className="container-fluid d-flex justify-content-center">
-                <div className="row">
-                    <div className="col-md-4">
-                        <ItemCard imgsrc={bag} name="La Medusa Studded Round Camera Bag" size="Small" link='https://www.amazon.com/' price="€1150.00" />
-                    </div>
-                    <div className="col-md-4">
-                        <ItemCard imgsrc={vans} name="Classic side stripe skate shoe" size="6" link='https://www.amazon.com/' price="€85.00 " />
-                    </div>
-                    <div className="col-md-4">
-                        <ItemCard imgsrc={coat} name="Vintage Check Panel Cotton Gabardine Coat" size="Medium" link='https://www.amazon.com/' price="$2,850.00" />
-                    </div>
+            {wishboards.map((wishboard) => (
+                <div key={wishboard.id}>
+                    <h2 className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>{wishboard.title}</h2>
                 </div>
-            </div>
+            ))}
             <div className="container-fluid d-flex justify-content-center">
-                <div className="row">
-                    <div className="col-md-4">
-                        <ItemCard imgsrc={bag} name="La Medusa Studded Round Camera Bag" size="Small" link='https://www.amazon.com/' price="€1150.00" />
-                    </div>
-                    <div className="col-md-4">
-                        <ItemCard imgsrc={vans} name="Classic side stripe skate shoe" size="6" link='https://www.amazon.com/' price="€85.00 " />
-                    </div>
-                    <div className="col-md-4">
-                        <ItemCard imgsrc={coat} name="Vintage Check Panel Cotton Gabardine Coat" size="Medium" link='https://www.amazon.com/' price="$2,850.00" />
+                <div className="col-md-4">
+                    <div className="row">
+                        <ItemCard />
                     </div>
                 </div>
             </div>

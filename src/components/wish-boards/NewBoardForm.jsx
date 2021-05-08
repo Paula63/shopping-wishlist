@@ -60,7 +60,7 @@ export default function NewBoardForm() {
     return (
         <>
             <AppBar />
-            <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh", marginTop: '-80px' }}>
+            <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh", marginTop: '-100px' }}>
                 <div className="w-100" style={{maxWidth: '400px'}}>
                     <Card>
                         <Card.Body>
@@ -75,7 +75,6 @@ export default function NewBoardForm() {
                                         placeholder="Enter Wish Board Name" 
                                         name="title"
                                         onChange={(e) => setTitle(e.target.value)}
-                                        // required 
                                     />
                                 </Form.Group>
                                 <Button onClick={() => addWishboard({ title, id: uuidv4() })} className="w-100" style={{ background: '#588cfc' }} variant="outline-light" type="submit">
@@ -85,7 +84,7 @@ export default function NewBoardForm() {
                         </Card.Body>
                     </Card>
                     <div className = "w-100 text-center mt-2">
-                        <Link to="/boards">Cancel</Link>
+                        <Link to="/boards">Return to Wish Boards</Link>
                     </div>
                 </div>
             </Container>

@@ -13,7 +13,7 @@ export default function WishboardHome() {
     return (
         <>
             <AppBar />
-            <h2 className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+            <h2 className="d-flex align-items justify-content-center mt-5 mb-4" style={{ fontFamily: 'Open Sans, sans-serif' }}>
                 Your Wish Boards
             </h2>
             <Button 
@@ -22,7 +22,7 @@ export default function WishboardHome() {
                 dark="true" 
                 exact='true' 
                 offset={-80}
-                style={{ width: 'auto', float: 'right', marginTop: '-55px', marginRight: '175px' }}
+                style={{ width: 'auto', float: 'right', marginTop: '-65px', marginRight: '175px' }}
             >
                 Create New Wish Board
             </Button>

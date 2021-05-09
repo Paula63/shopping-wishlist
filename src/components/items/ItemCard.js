@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './container.css';
 import firebase from '../../firebase';
+import * as AiIcon from 'react-icons/ai';
 
 export default function ItemCard() {
 
@@ -40,6 +41,9 @@ export default function ItemCard() {
                         <p className="item-name" style={{ marginTop: '-40px' }}>{item.displayName}</p>
                         <p className="item-text text-secondary">Size: {item.size}</p>
                         <p className="item-text text-secondary">Price: {item.price}</p>
+                        <div style={{ marginTop: '-15px', marginLeft: '180px' }}>
+                            <AiIcon.AiOutlineClose style={{ width: '25px', height: '25px' }} />
+                        </div>
                     </div>
                 </div>
             ))}

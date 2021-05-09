@@ -48,7 +48,7 @@ function App() {
               <PrivateRoute exact path="/settings" component={Setting} />
               <PrivateRoute exact path="/boards" component={WishboardHome} />
               <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />
-              <PrivateRoute exact path="/boards/items" component={Items} />
+              <PrivateRoute exact path="/boards/:id" component={Items} />
             </Switch>
           </AuthProvider>
         </Router>

@@ -54,7 +54,15 @@ export default function Signup(){
                                 <Form.Label>Password Confirm</Form.Label>
                                 <Form.Control type="password" ref={passwordConfirmRef} required />
                             </Form.Group>
-                            <Button disabled={loading} className="w-100" style={{ background: '#588cfc' }} variant="outline-light" type="Submit">Sign up</Button>
+                            <Button 
+                                disabled={loading} 
+                                className="w-100" 
+                                style={{ background: '#588cfc' }} 
+                                variant="outline-light" 
+                                type="Submit"
+                            >
+                                Sign up
+                            </Button>
                             <div className="w-100 text-center mt-2 mb-2">Or</div>
                             <SocialAuth />
                         </Form>

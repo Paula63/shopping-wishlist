@@ -77,7 +77,13 @@ export default function NewBoardForm() {
                                         onChange={(e) => setTitle(e.target.value)}
                                     />
                                 </Form.Group>
-                                <Button onClick={() => addWishboard({ title, id: uuidv4() })} className="w-100" style={{ background: '#588cfc' }} variant="outline-light" type="submit">
+                                <Button 
+                                    onClick={() => addWishboard({ title, id: uuidv4() })} 
+                                    className="w-100" 
+                                    style={{ background: '#588cfc' }} 
+                                    variant="outline-light" 
+                                    type="submit"
+                                >
                                     Save
                                 </Button>
                             </Form>

@@ -28,6 +28,10 @@ export default function ItemCard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    if (loading) {
+        return <h1>Loading ..</h1>
+    }
+
     return (
         <>
             {savedItem.map((item) => (

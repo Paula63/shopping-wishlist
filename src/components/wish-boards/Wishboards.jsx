@@ -48,19 +48,19 @@ export default function Wishboards() {
     //     deps: [match.params.id]
     // });
 
-    // if (loading) {
-    //     return <h1>Loading ..</h1>
-    // }
+    if (loading) {
+        return <h1>Loading ..</h1>
+    }
 
     // delete board
-    // function deleteWishboard(wishboard) {
-    //     ref
-    //         .doc(wishboard.id)
-    //         .delete()
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // }
+    function deleteWishboard(wishboard) {
+        ref
+            .doc(wishboard.id)
+            .delete()
+            .catch((err) => {
+                console.log(err);
+            });
+    }
 
     //edit wishboard
     // function editWishboard(updatedWishboard) {
@@ -81,19 +81,11 @@ export default function Wishboards() {
                 >
                         <div className="flex flex-row" key={wishboard.id}>
                             <h3>{wishboard.title}</h3>
-                            {/* <div className="w-100">
-                                <Button className="w-50" onClick={() => editWishboard({ title: wishboard.title, id: wishboard.id })}>
-                                    Edit
-                                </Button>
-                                <Button className="w-50" onClick={() => deleteWishboard(wishboard)}>
-                                    Delete
-                                </Button>
-                            </div> */}
                         </div>
                         <div className="flex flex-row ml-4">
                             <RiIcons.RiDeleteBin2Line 
                                 style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end'}} 
-                                // onClick={() => deleteWishboard(wishboard)} 
+                                onClick={() => deleteWishboard(wishboard)} 
                             />
                             <Link to={`/boards/${wishboard.id}`} style={{ color: '#000' }} key={wishboard.id}>
                                 <BiIcons.BiWindowOpen 

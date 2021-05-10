@@ -36,7 +36,12 @@ export default function Items() {
             <AppBar />
             {wishboards.map((wishboard) => (
                 <div key={wishboard.id}>
-                    <h2 className="d-flex align-items justify-content-center mt-5" style={{ fontFamily: 'Open Sans, sans-serif' }}>{wishboard.title}</h2>
+                    <h2 
+                    className="d-flex align-items justify-content-center mt-5" 
+                    style={{ fontFamily: 'Open Sans, sans-serif' }}
+                >
+                    {wishboard.title}
+                </h2>
                 </div>
             ))}
             <div className="container-fluid d-flex justify-content-center">

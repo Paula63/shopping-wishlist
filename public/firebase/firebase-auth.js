@@ -1,1 +1,0 @@
-<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>

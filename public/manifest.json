@@ -1,24 +1,25 @@
 {
-  "manifest_version": 3,
-  "name": "Shopping Wishlist",
-  "version": "1.3.7",
-  "content_scripts": [
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["scripts/content.js"],
-      "css": ["stylesheet/content.css"],
-      "run_at": "document_end"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
-  "background": {
-    "service_worker": "background-wrapper.js"
-  },
-  "host_permissions": [ 
-    "<all_urls>"
-  ],
-  "action": {
-    "default_icon": "images/shopping-bag.png",
-    "default_popup": "interface/popup.html",
-    "default_title": "Shopping Assistant"
-  }
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }

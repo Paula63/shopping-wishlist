@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './container.css';
 import firebase from '../../firebase';
-import * as AiIcon from 'react-icons/ai';
-import * as FiIcons from 'react-icons/fi';
-import Shopping from '../../images/shopping.svg';
+import * as RiIcons from 'react-icons/ri';
+import * as GiIcons from 'react-icons/gi';
 
 export default function ItemCard() {
 
@@ -20,7 +19,6 @@ export default function ItemCard() {
                 items.push(doc.data());
             })
             setsavedItem(items);
-            console.log(items)
             setLoading(false);
         });
     }
@@ -34,23 +32,35 @@ export default function ItemCard() {
         return <p>Loading ..</p>
     }
 
+    function deleteItem(item) {
+        ref.doc(item.id).delete()
+            .catch((err) => {
+                console.log("here", err);
+            });
+    }
+
     return (
         <>
             {savedItem.map((item) => (
-                <div className="item text-center shadow" style={{ width: '240px', height: '380px', marginRight: '8px' }} key={item.id}>
-                    <div className="cont cont-size" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <a href={item.pathURL}>
-                            <FiIcons.FiAperture className="item-img-top" />
-                            {/* <img src={Shopping} alt="item" className="item-img-top" style={{ }} /> */}
-                        </a>
-                    </div>
-                    <div className="item-title text-dark">
-                        <p className="item-name" style={{ wordWrap: 'break-word' }}>{item.displayName}</p>
-                        {/* <p className="item-text text-secondary">Size: {item.size}</p>
-                        <p className="item-text text-secondary">Price: {item.price}</p> */}
-                        <div style={{ marginTop: '-15px', marginLeft: '180px' }}>
-                            <AiIcon.AiOutlineClose style={{ width: '25px', height: '25px' }} />
+                <div>
+                    <div className="item text-center shadow" style={{ width: '240px', height: '290px', marginRight: '8px' }} key={item.id}>
+                        <div className="cont cont-size" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <a href={item.pathURL}>
+                                <GiIcons.GiCardboardBox className="item-img-top" style={{ color: '#000', marginTop: '25px', marginLeft: '5px', width: '120px' }} />
+                            </a>
                         </div>
+                        <div className="item-title text-dark">
+                            <p className="item-name" style={{ wordWrap: 'break-word' }}>{item.displayName}</p>
+                            {/* <p className="item-text text-secondary">Size: {item.size}</p>
+                            <p className="item-text text-secondary">Price: {item.price}</p> */}
+                            
+                        </div>
+                    </div>
+                    <div style={{ marginTop: '-15px', marginLeft: '110px' }}>
+                        <RiIcons.RiDeleteBin2Line 
+                            style={{ width: '30px', height: '30px', float: 'right', justifySelf: 'end'}} 
+                            onClick={() => deleteItem(item)} 
+                        />
                     </div>
                 </div>
             ))}

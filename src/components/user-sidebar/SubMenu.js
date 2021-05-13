@@ -88,6 +88,12 @@ export default function SubMenu() {
                     <SidebarLabel>Settings</SidebarLabel>
                 </div>
             </SidebarLink>
+            <SidebarLink to='/boards/items/manage'>
+                <div>
+                    <MdIcons.MdModeEdit />
+                    <SidebarLabel>Manage Items</SidebarLabel>
+                </div>
+            </SidebarLink>
             <SidebarLink to='/boards' onClick={wishboards.subNav && showSubnav}>
                 <div>
                     <RiIcons.RiArtboardLine />

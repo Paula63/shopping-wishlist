@@ -5,7 +5,7 @@ import * as AiIcon from 'react-icons/ai';
 import * as FiIcons from 'react-icons/fi';
 import Shopping from '../../images/shopping.svg';
 
-export default function ItemCard() {
+export default function ViewItems() {
 
     const [savedItem, setsavedItem] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -37,23 +37,22 @@ export default function ItemCard() {
     return (
         <>
             {savedItem.map((item) => (
-                <div className="item text-center shadow" style={{ width: '240px', height: '380px', marginRight: '8px' }} key={item.id}>
+                <div className="item text-center shadow" style={{ width: '240px', height: '310px', marginRight: '8px' }} key={item.id}>
                     <div className="cont cont-size" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <a href={item.pathURL}>
-                            <FiIcons.FiAperture className="item-img-top" />
+                            <FiIcons.FiAperture className="item-img-top" style={{ color: '#000' }} />
                             {/* <img src={Shopping} alt="item" className="item-img-top" style={{ }} /> */}
                         </a>
                     </div>
                     <div className="item-title text-dark">
                         <p className="item-name" style={{ wordWrap: 'break-word' }}>{item.displayName}</p>
-                        {/* <p className="item-text text-secondary">Size: {item.size}</p>
-                        <p className="item-text text-secondary">Price: {item.price}</p> */}
+                        <p className="item-text text-secondary">Location: {item.wishboard}</p>
                         <div style={{ marginTop: '-15px', marginLeft: '180px' }}>
                             <AiIcon.AiOutlineClose style={{ width: '25px', height: '25px' }} />
                         </div>
                     </div>
                 </div>
-            ))}
+            ))}  
         </>
     )
 }

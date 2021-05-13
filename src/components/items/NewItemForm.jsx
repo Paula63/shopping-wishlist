@@ -83,7 +83,7 @@ export default function NewItemForm() {
                         </Card.Body>
                     </Card>
                     <div className = "w-100 text-center mt-2">
-                        <Link to="/view-all-items">Cancel</Link>
+                        <Link to="/boards/items/manage">Cancel</Link>
                     </div>
                 </div>
             </Container>

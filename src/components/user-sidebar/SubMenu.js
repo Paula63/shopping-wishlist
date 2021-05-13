@@ -96,7 +96,7 @@ export default function SubMenu() {
             </SidebarLink>
             {wishboards && wishboards.map((wishboard) => {
                 return(
-                    <DropdownLink to='/boards' key={wishboard.id}>
+                    <DropdownLink to={`/boards/${wishboard.id}`} key={wishboard.id}>
                         <RiIcons.RiArtboard2Line />
                         <SidebarLabel>{wishboard.title}</SidebarLabel>
                     </DropdownLink>

@@ -2,30 +2,30 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import AppBar from '../app-bar/AppBar';
 import { Button } from '../ButtonElement';
-import Wishboards from './Wishboards';
+import ManageItems from './ManageItems';
 
-export default function WishboardHome() {
 
+export default function ManageItemHome() {
     return (
         <>
             <AppBar />
             <h2 className="d-flex align-items justify-content-center mt-5 mb-4" style={{ fontFamily: 'Open Sans, sans-serif' }}>
-                Your Wish Boards
+                Manage Your Items
             </h2>
             <Button 
-                to="boards/new-board" 
+                to="/boards/items/new-item" 
                 primary="true" 
                 dark="true" 
                 exact='true' 
                 offset={-80}
-                style={{ width: 'auto', float: 'right', marginTop: '-65px', marginRight: '175px' }}
+                style={{ width: 'auto', float: 'right', marginTop: '-65px', marginRight: '210px' }}
             >
-                Create New Wish Board
+                Add New Item
             </Button>
             <Container>
                 <Row className="justify-content-md-center">
                     <Col md='auto'>
-                        <Wishboards />
+                        <ManageItems />
                     </Col>
                 </Row>
             </Container>

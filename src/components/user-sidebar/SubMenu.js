@@ -88,6 +88,12 @@ export default function SubMenu() {
                     <SidebarLabel>Settings</SidebarLabel>
                 </div>
             </SidebarLink>
+            <SidebarLink to='/boards/items/manage'>
+                <div>
+                    <MdIcons.MdModeEdit />
+                    <SidebarLabel>Manage Items</SidebarLabel>
+                </div>
+            </SidebarLink>
             <SidebarLink to='/boards' onClick={wishboards.subNav && showSubnav}>
                 <div>
                     <RiIcons.RiArtboardLine />
@@ -96,7 +102,7 @@ export default function SubMenu() {
             </SidebarLink>
             {wishboards && wishboards.map((wishboard) => {
                 return(
-                    <DropdownLink to='/boards' key={wishboard.id}>
+                    <DropdownLink to={`/boards/${wishboard.id}`} key={wishboard.id}>
                         <RiIcons.RiArtboard2Line />
                         <SidebarLabel>{wishboard.title}</SidebarLabel>
                     </DropdownLink>

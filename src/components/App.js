@@ -14,6 +14,7 @@ import NewBoardForm from './wish-boards/NewBoardForm';
 import Items from './items/Items';
 import ViewAll from './items/ViewAll';
 import NewItemForm from './items/NewItemForm';
+import ManageItemHome from './items/ManageItemHome';
 import Sandbox from "./sandbox/Sandbox";
 import Services from "./footer/Services";
 import HowItWorks from "./footer/HowItWorks";
@@ -52,7 +53,8 @@ function App() {
               <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />
               <PrivateRoute exact path="/boards/:id" component={Items} />
               <PrivateRoute exact path="/view-all-items" component={ViewAll} />
-              <PrivateRoute exact path="/items/new-item" component={NewItemForm} />
+              <PrivateRoute exact path="/boards/items/new-item" component={NewItemForm} />
+              <PrivateRoute exact path="/boards/items/manage" component={ManageItemHome} />
             </Switch>
           </AuthProvider>
         </Router>

@@ -51,7 +51,7 @@ function App() {
               <PrivateRoute exact path="/settings" component={Setting} />
               <PrivateRoute exact path="/boards" component={WishboardHome} />
               <PrivateRoute exact path="/boards/new-board" component={NewBoardForm} />
-              <PrivateRoute exact path="/boards/:id" component={Items} />
+              <PrivateRoute exact path="/boards/items" component={Items} />
               <PrivateRoute exact path="/view-all-items" component={ViewAll} />
               <PrivateRoute exact path="/boards/items/new-item" component={NewItemForm} />
               <PrivateRoute exact path="/boards/items/manage" component={ManageItemHome} />

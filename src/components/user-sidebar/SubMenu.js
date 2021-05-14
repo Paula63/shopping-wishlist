@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import firebase from './../../firebase';
 import styled from 'styled-components';
-import * as MdIcons from 'react-icons/md';
-import * as RiIcons from 'react-icons/ri';
 
 const SidebarLink = styled(Link)`
     display: flex;
@@ -47,92 +44,37 @@ const DropdownLink = styled(Link)`
     }
 `;
 
-export default function SubMenu() {
+export default function SubMenu({ item }) {
 
     const [subnav, setSubnav] = useState(false);
 
-    const [wishboards, setWishboards] = useState([]);
-
     const showSubnav = () => setSubnav(!subnav);
-
-    const ref = firebase.firestore().collection("wishboards");
-
-    function getWishboards() {
-        ref.onSnapshot((querySnapshot) => {
-            const items = [];
-            querySnapshot.forEach((doc) => {
-                items.push(doc.data());
-            })
-            setWishboards(items);
-        });
-    }
-
-    useEffect(() => {
-        getWishboards();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     return (
         <>
-            <div>
-            <SidebarLink to='/profile'>
+            <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
                 <div>
-                    <MdIcons.MdAccountCircle />
-                    <SidebarLabel>Profile</SidebarLabel>
+                    {item.icon}
+                    <SidebarLabel>
+                        {item.title}
+                    </SidebarLabel>
+                </div>
+                <div>
+                    {item.subNav && subnav 
+                    ? item.iconOpened 
+                    : item.subNav 
+                    ? item.iconClosed 
+                    : null}
                 </div>
             </SidebarLink>
-            </div>
-            <SidebarLink to='/settings'>
-                <div>
-                    <RiIcons.RiSettings3Fill />
-                    <SidebarLabel>Settings</SidebarLabel>
-                </div>
-            </SidebarLink>
-            <SidebarLink to='/boards/items/manage'>
-                <div>
-                    <MdIcons.MdModeEdit />
-                    <SidebarLabel>Manage Items</SidebarLabel>
-                </div>
-            </SidebarLink>
-            <SidebarLink to='/boards' onClick={wishboards.subNav && showSubnav}>
-                <div>
-                    <RiIcons.RiArtboardLine />
-                    <SidebarLabel>Wish Boards</SidebarLabel>
-                </div>
-            </SidebarLink>
-            <DropdownLink to="/view-all-items">
-                <RiIcons.RiArtboard2Line />
-                <SidebarLabel>View All Items</SidebarLabel>
-            </DropdownLink>
-            <DropdownLink to="/boards/items">
-                <RiIcons.RiArtboard2Line />
-                <SidebarLabel>Filter Items</SidebarLabel>
-            </DropdownLink>
-            {/* {wishboards && wishboards.map((wishboard) => {
-                return(
-                    <DropdownLink to={`/boards/${wishboard.id}`} key={wishboard.id}>
-                        <RiIcons.RiArtboard2Line />
-                        <SidebarLabel>{wishboard.title}</SidebarLabel>
+            {subnav && item.subNav.map((item, index) => {
+                return (
+                    <DropdownLink to={item.path} key={index}>
+                        {item.icon}
+                        <SidebarLabel>{item.title}</SidebarLabel>
                     </DropdownLink>
                 )
-            })} */}
-            {/* {toggleVisibility ? true &&
-                <div>
-                    <RiIcons.RiArrowUpSFill />
-                    {wishboards && wishboards.map((wishboard) => {
-                        return(
-                            <DropdownLink to='/boards' key={wishboard.id} onClick={notify}>
-                                <RiIcons.RiArtboard2Line />
-                                <SidebarLabel>{wishboard.title}</SidebarLabel>
-                            </DropdownLink>
-                        )
-                    })}
-                </div> 
-            : 
-                <div>
-                    <RiIcons.RiArrowDownSFill />
-                </div>
-            } */}
+            })}
         </>
     )
 }

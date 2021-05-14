@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
+import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 
@@ -55,18 +56,14 @@ export default function UserSidebar() {
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav>
-                    <NavIcon to='#' style={{ marginLeft: '-185px' }} >
+                    <NavIcon to='#' style={{ marginLeft: '-185px' }}>
                         <FaIcons.FaBars onClick={showSidebar} />
                     </NavIcon>
                     <SidebarNav sidebar={sidebar}>
                         <SidebarWrap>
-                            {/* <NavIcon to='#'>
-                                <AiIcons.AiOutlineClose onClick={showSidebar} />
-                            </NavIcon> */}
-                            {/* {wishboards.map((wishboard) => {
-                                return <SubMenu item={wishboard.title} key={wishboard.id} />
-                            })} */}
-                            <SubMenu />
+                            {SidebarData.map((item, index) => {
+                                return <SubMenu item={item} key={index} />
+                            })}
                         </SidebarWrap>
                     </SidebarNav>
                 </Nav>

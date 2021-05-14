@@ -9,7 +9,11 @@
 }
 
 .item-title {
-  padding: 3rem 0 !important;
+  padding: 2rem 0 !important;
+}
+
+.item-name {
+  font-size: 18px;
 }
 
 .item-text {
@@ -23,7 +27,7 @@
 
 .cont-size {
   width: 240px !important;
-  height: 140px;
+  height: 180px;
   border-radius: 5px 5px 0 0;
 }
 

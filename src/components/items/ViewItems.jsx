@@ -36,11 +36,20 @@ export default function ViewItems() {
     return (
         <>
             {savedItem.map((item) => (
-                <div className="item text-center shadow" style={{ width: '240px', height: '310px', marginRight: '8px' }} key={item.id}>
-                    <div className="cont cont-size" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div 
+                    className="item text-center shadow" 
+                    style={{ width: '240px', height: '330px', marginRight: '8px' }} 
+                    key={item.id}
+                >
+                    <div 
+                        className="cont cont-size block-example border-bottom border-dark" 
+                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    >
                         <a href={item.pathURL}>
-                            <GiIcons.GiCardboardBox className="item-img-top" style={{ color: '#000', marginTop: '25px', marginLeft: '5px', width: '120px' }} />
-                            {/* <GiIcons.GiHobbitDoor className="item-img-top" style={{ color: '#000', marginTop: '25px', marginLeft: '5px', width: '120px' }} /> */}
+                            <GiIcons.GiCardboardBox 
+                                className="item-img-top" 
+                                style={{ color: '#000', marginLeft: '5px', width: '120px' }} 
+                            />
                         </a>
                     </div>
                     <div className="item-title text-dark mt-3">

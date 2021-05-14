@@ -11,7 +11,7 @@ export default function Items() {
                 className="d-flex align-items justify-content-center mt-5" 
                 style={{ fontFamily: 'Open Sans, sans-serif' }}
             >
-                Filter Your Items
+                Filter Items by Wish Board
             </h2>
             <div className="container-fluid d-flex justify-content-center" style={{ marginTop: '50px' }}>
                 <div className="col-md-4">

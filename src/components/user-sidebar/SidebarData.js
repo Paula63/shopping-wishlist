@@ -1,6 +1,7 @@
 import React from 'react';
 import * as MdIcons from 'react-icons/md';
 import * as RiIcons from 'react-icons/ri';
+import * as TiIcon from 'react-icons/ti';
 
 export const SidebarData = [
     {
@@ -16,24 +17,28 @@ export const SidebarData = [
     {
         title: 'Wish Boards',
         path: '/boards',
-        icon: <RiIcons.RiArtboardLine />,
+        icon: <RiIcons.RiArtboardLine />
+    },
+    {
+        title: 'Items',
+        icon: <TiIcon.TiTags />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpen: <RiIcons.RiArrowUpSFill />,
         subNav: [
             {
-                title: 'Gardening',
-                path: '/boards/gardening',
-                icon: <RiIcons.RiArtboard2Line />
+                title: 'Manage Items',
+                path: '/boards/items/manage',
+                icon: <TiIcon.TiPointOfInterest />
             },
             {
-                title: 'Home',
-                path: '/boards/home',
-                icon: <RiIcons.RiArtboard2Line />
+                title: 'View All Items',
+                path: '/view-all-items',
+                icon: <TiIcon.TiPointOfInterest />
             },
             {
-                title: 'Clothing',
-                path: '/boards/clothing',
-                icon: <RiIcons.RiArtboard2Line />
+                title: 'Filter Items',
+                path: '/boards/items',
+                icon: <TiIcon.TiPointOfInterest />
             },
         ]
     },

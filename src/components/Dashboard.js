@@ -10,7 +10,7 @@ export default function Dashboard() {
                 className="d-flex align-items justify-content-center mt-5" 
                 style={{ fontFamily: 'Open Sans, sans-serif' }}
             >
-                Shopping Inspiration
+                Shopping Suggestions
             </h2>
             <Cards />
         </>

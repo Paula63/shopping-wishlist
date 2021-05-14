@@ -48,7 +48,7 @@ export default function ManageItems() {
                     style={{ width: '34rem', height: '65px', borderRadius: '18px', fontSize: '18px', background: '#fff', color: '#000', borderColor: '#fff' }}
                 >
                         <div className="flex flex-row" key={item.id}>
-                            <h3 style={{ fontSize: '18px' }}>{item.displayName}</h3>
+                            <h3 style={{ fontSize: '22px' }}>{item.displayName}</h3>
                         </div>
                         <div className="flex flex-row ml-4">
                             <RiIcons.RiDeleteBin2Line 

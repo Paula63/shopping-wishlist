@@ -53,23 +53,23 @@ export default function ItemCard() {
                 <div>
                     <div 
                         className="item text-center shadow" 
-                        style={{ width: '240px', height: '310px', marginRight: '8px', marginBottom: '10px' }} 
+                        style={{ width: '240px', height: '330px', marginRight: '8px', marginBottom: '10px' }} 
                         key={item.id}
                     >
                         <div 
-                            className="cont cont-size" 
+                            className="cont cont-size block-example border-bottom border-dark" 
                             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                         >
                             <a href={item.pathURL}>
                                 <GiIcons.GiCardboardBox 
                                     className="item-img-top" 
-                                    style={{ color: '#000', marginTop: '25px', marginLeft: '5px', width: '120px' }} 
+                                    style={{ color: '#000', marginLeft: '5px', width: '120px' }} 
                                 />
                             </a>
                         </div>
-                        <div className="item-title text-dark mt-3">
+                        <div className="item-title text-dark">
                             <p className="item-name" style={{ wordWrap: 'break-word' }}>{item.displayName}</p>
-                            <p className="item-text text-secondary" style={{ wordWrap: 'break-word' }}>Wish board: {item.wishboard}</p>
+                            <p className="item-text text-secondary" style={{ wordWrap: 'break-word' }}>Wish Board: {item.wishboard}</p>
                         </div>
                     </div>
                 </div>

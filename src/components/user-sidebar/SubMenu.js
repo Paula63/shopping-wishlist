@@ -104,7 +104,7 @@ export default function SubMenu() {
                 <RiIcons.RiArtboard2Line />
                 <SidebarLabel>View All Items</SidebarLabel>
             </DropdownLink>
-            <DropdownLink to="/boards/view-all">
+            <DropdownLink to="/boards/items">
                 <RiIcons.RiArtboard2Line />
                 <SidebarLabel>Filter Items</SidebarLabel>
             </DropdownLink>

@@ -100,14 +100,22 @@ export default function SubMenu() {
                     <SidebarLabel>Wish Boards</SidebarLabel>
                 </div>
             </SidebarLink>
-            {wishboards && wishboards.map((wishboard) => {
+            <DropdownLink to="/view-all-items">
+                <RiIcons.RiArtboard2Line />
+                <SidebarLabel>View All Items</SidebarLabel>
+            </DropdownLink>
+            <DropdownLink to="/boards/view-all">
+                <RiIcons.RiArtboard2Line />
+                <SidebarLabel>Filter Items</SidebarLabel>
+            </DropdownLink>
+            {/* {wishboards && wishboards.map((wishboard) => {
                 return(
                     <DropdownLink to={`/boards/${wishboard.id}`} key={wishboard.id}>
                         <RiIcons.RiArtboard2Line />
                         <SidebarLabel>{wishboard.title}</SidebarLabel>
                     </DropdownLink>
                 )
-            })}
+            })} */}
             {/* {toggleVisibility ? true &&
                 <div>
                     <RiIcons.RiArrowUpSFill />

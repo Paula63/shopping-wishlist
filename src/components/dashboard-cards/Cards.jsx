@@ -2,7 +2,7 @@ import React from 'react';
 import CardComponent from './CardComponent';
 import amazon from './../../images/amazon.jpg';
 import zara from './../../images/zara.jpg';
-import ted from './../../images/ted.jpg';
+import curryslogo from './../../images/curryslogo.png';
 
 export default function Cards() {
     return (
@@ -15,7 +15,7 @@ export default function Cards() {
                     <CardComponent imgsrc={zara} title="Shop Zara" desc="" link='https://www.zara.com' />
                 </div>
                 <div className="col-md-4">
-                    <CardComponent imgsrc={ted} title="Shop Ted Baker" desc="" link='https://www.tedbaker.com' />
+                    <CardComponent imgsrc={curryslogo} title="Shop PC World" desc="" link='https://www.currys.ie/ieen/index.html' />
                 </div>
             </div> 
         </div>

@@ -23,7 +23,7 @@ export default function Tips() {
                                 3{') '}Delete wish boards or items that are not needed.
                             </div>
                             <div className="mb-2">
-                                4{') '}Choose when to receive discount notifications for your items.
+                                4{') '}Use our browser extension to save new items.
                             </div>
                         </Card.Body>
                     </Card>

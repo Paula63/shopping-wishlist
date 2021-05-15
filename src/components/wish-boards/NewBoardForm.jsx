@@ -5,44 +5,8 @@ import { Container, Card, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AppBar from '../app-bar/AppBar';
 
-// const db = app.database();
 
 export default function NewBoardForm() {
-
-    // eslint-disable-next-line no-lone-blocks
-    {/*const initialValues = {
-        title: '',
-    };
-
-    const [values, setValues] = useState(initialValues);
-
-    const handleFormSubmit = e => {
-        e.preventDefault();
-        props.addOrEdit(values);
-    }
-
-    const handleInputChange = e => {
-        const {name, value} = e.target;
-        setValues({ ...values, [name]: value });
-    } */}
-
-    // const [title, setTitle] = useState('');
-    // const { id } = useParams();
-
-    // eslint-disable-next-line no-lone-blocks
-    {/* const handleInputChange = (e) => {
-        setTitle(e.target.value)
-    } */}
-
-    // eslint-disable-next-line no-lone-blocks
-    {/* const createBoard = () => {
-        const boardRef = database.database().ref("wishboard");
-        const board = {
-            title,
-            complete: false,
-        };
-        boardRef.push(board);    
-    } */}
 
     //add new board 
     const ref = firebase.firestore().collection("wishboards");

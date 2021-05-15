@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon1 from '../../images/svg4.svg';
-import Icon2 from '../../images/svg-5.svg';
+import Icon2 from '../../images/svg7.svg';
 import Icon3 from '../../images/svg2.svg';
 import { 
     ServicesContainer, 
@@ -25,8 +25,8 @@ export default function Services() {
                         </ServicesCard>
                         <ServicesCard>
                             <ServicesIcon src={Icon2} />
-                            <ServicesH2>Discount Notifications</ServicesH2>
-                            <ServicesP>Receive price reduction alerts through email for any item</ServicesP>
+                            <ServicesH2>Manage Items</ServicesH2>
+                            <ServicesP>Remove items or wish boards from your account at any time</ServicesP>
                         </ServicesCard>
                         <ServicesCard>
                             <ServicesIcon src={Icon3} />

@@ -1,72 +1,48 @@
-# Getting Started with Create React App
+# Shopping Wishlist Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A shopping assistant website that lets users manage online purchases using wish boards.
 
-## Available Scripts
+Users can use the website to view the items saved though the browser extension, create new wish boards, add and manage items.
 
-In the project directory, you can run:
+Users can add an unlimited number of items to their shopping wish boards.
 
-### `yarn start`
+The items saved by the user can filtered using a search bar, the user can enter the name of any wish board to only view the items present in that wish board.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-![image](https://user-images.githubusercontent.com/31826030/118410008-3457b180-b685-11eb-8dd6-935b3d9a5666.png)
+The users can click on the image icon displayed inside of the card view of each item to be redirected to the item’s store page.
 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Execution Steps
 
-### `yarn eject`
+### Run Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone GitHub repository on your device
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install Yarn package manager
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Run `yarn start` in a terminal to execute website in the development mode
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Heroku Deployed Project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Visit [Heroku](https://shopping-wishlist.herokuapp.com/main) to view a deployed version of the project 
 
-### Code Splitting
+## Project Interface
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Unregistered users are redirected to the landing page, this page contains various information about the services offered by the system
 
-### Analyzing the Bundle Size
+![image](https://user-images.githubusercontent.com/31826030/118410810-4d626180-b689-11eb-86e5-2747fbd47b2d.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+After the user creates an accoun, the other website services become visible
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![image](https://user-images.githubusercontent.com/31826030/118410834-679c3f80-b689-11eb-95cc-1a2aadf73b7e.png)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The user can create wish boards and manage existing ones
 
-### Deployment
+![image](https://user-images.githubusercontent.com/31826030/118410887-aa5e1780-b689-11eb-8e69-2f1f257bd651.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Items that have been saved can be filted using the search bar at the top of the page

@@ -47,5 +47,5 @@ The user can create wish boards and manage existing ones
 
 Items that have been saved can be filted using the search bar at the top of the page
 
-![image](https://user-images.githubusercontent.com/31826030/118411389-2f4a3080-b68c-11eb-9aff-9cb8b620601f.png)
+![image](https://user-images.githubusercontent.com/31826030/118411413-4b4dd200-b68c-11eb-80b7-38234dfd90c6.png)
 

@@ -28,7 +28,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
 Visit [Heroku](https://shopping-wishlist.herokuapp.com/main) to view a deployed version of the project 
 
-## Project Interface
+## Website Interface
 
 Unregistered users are redirected to the landing page, this page contains various information about the services offered by the system
 

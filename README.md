@@ -19,7 +19,7 @@ Clone GitHub repository on your device
 
 Install Yarn package manager
 
-Run `yarn start` in a terminal to execute website in the development mode
+Run `yarn start` in a terminal to execute the website in the development mode
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
@@ -35,7 +35,7 @@ Unregistered users are redirected to the landing page, this page contains variou
 ![image](https://user-images.githubusercontent.com/31826030/118410810-4d626180-b689-11eb-86e5-2747fbd47b2d.png)
 
 
-After the user creates an accoun, the other website services become visible
+After the user creates an account, the other website services become visible
 
 ![image](https://user-images.githubusercontent.com/31826030/118410834-679c3f80-b689-11eb-95cc-1a2aadf73b7e.png)
 
